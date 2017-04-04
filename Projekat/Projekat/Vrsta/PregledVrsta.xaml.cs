@@ -105,7 +105,8 @@ namespace Projekat.Vrsta
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new IzmjenaVrste();
+            s.Show();
         }
 
         private void btnObrisi_Click(object sender, RoutedEventArgs e)

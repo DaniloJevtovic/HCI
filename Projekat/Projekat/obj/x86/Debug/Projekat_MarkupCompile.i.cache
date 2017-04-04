@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Lemur\Desktop\Projekat 5\Projekat\obj\x86\Debug\
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\
 Projekat
 none
 false
 DEBUG;TRACE
-C:\Users\Lemur\Desktop\Projekat 5\Projekat\App.xaml
-131196740375
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\App.xaml
+171711865179
 
-21-233332145
+251886910770
 16-1636770576
-Etiketa\NovaEtiketa.xaml;Etiketa\NovaEtiketa1.xaml;Etiketa\PregledEtiketa.xaml;Help\About.xaml;Help\Demo.xaml;Help\Tutorijal.xaml;MainWindow.xaml;Tip\NoviTip.xaml;Tip\NoviTip1.xaml;Tip\PregledTipova.xaml;Vrsta\NovaVrsta.xaml;Vrsta\NovaVrsta1.xaml;Vrsta\PregledVrsta.xaml;
+Etiketa\IzmjenaEtikete.xaml;Etiketa\NovaEtiketa.xaml;Etiketa\NovaEtiketa1.xaml;Etiketa\PregledEtiketa.xaml;Help\About.xaml;Help\Demo.xaml;Help\Pomoc.xaml;Help\Tutorijal.xaml;MainWindow.xaml;Tip\IzmjenaTipa.xaml;Tip\NoviTip.xaml;Tip\NoviTip1.xaml;Tip\PregledTipova.xaml;Vrsta\IzmjenaVrste.xaml;Vrsta\NovaVrsta.xaml;Vrsta\NovaVrsta1.xaml;Vrsta\PregledVrsta.xaml;
 
 False
 

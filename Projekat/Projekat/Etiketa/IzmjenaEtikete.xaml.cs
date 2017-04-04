@@ -11,16 +11,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-using Projekat.Help;
-
 namespace Projekat.Etiketa
 {
     /// <summary>
-    /// Interaction logic for NovaEtiketa1.xaml
+    /// Interaction logic for IzmjenaEtikete.xaml
     /// </summary>
-    public partial class NovaEtiketa1 : Window
+    public partial class IzmjenaEtikete : Window
     {
-        public NovaEtiketa1()
+        public IzmjenaEtikete()
         {
             InitializeComponent();
         }
@@ -37,8 +35,7 @@ namespace Projekat.Etiketa
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
-            var s = new Pomoc();
-            s.Show();
+
         }
     }
 }

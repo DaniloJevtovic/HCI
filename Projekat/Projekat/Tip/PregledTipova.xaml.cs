@@ -103,7 +103,8 @@ namespace Projekat.Tip
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new IzmjenaTipa();
+            s.Show();
         }
 
         private void btnObrisi_Click(object sender, RoutedEventArgs e)

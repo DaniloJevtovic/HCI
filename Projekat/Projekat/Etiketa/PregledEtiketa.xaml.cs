@@ -103,7 +103,8 @@ namespace Projekat.Etiketa
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new IzmjenaEtikete();
+            s.Show();
         }
 
         private void btnObrisi_Click(object sender, RoutedEventArgs e)

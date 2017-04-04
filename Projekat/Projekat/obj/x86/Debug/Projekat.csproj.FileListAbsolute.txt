@@ -141,3 +141,46 @@ C:\Users\Lemur\Desktop\Projekat 5\Projekat\obj\x86\Debug\Tip\NoviTip1.baml
 C:\Users\Lemur\Desktop\Projekat 5\Projekat\obj\x86\Debug\Tip\NoviTip1.g.cs
 C:\Users\Lemur\Desktop\Projekat 5\Projekat\obj\x86\Debug\Vrsta\NovaVrsta1.baml
 C:\Users\Lemur\Desktop\Projekat 5\Projekat\obj\x86\Debug\Vrsta\NovaVrsta1.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Projekat.exe
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Projekat.pdb
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\bin\Debug\Projekat.exe
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\bin\Debug\Projekat.pdb
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\NovaEtiketa.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\NovaEtiketa1.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\PregledEtiketa.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\About.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\Demo.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\Tutorijal.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\MainWindow.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\NoviTip.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\NoviTip1.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\PregledTipova.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\NovaVrsta.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\NovaVrsta1.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\PregledVrsta.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\NovaEtiketa.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\NovaEtiketa1.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\PregledEtiketa.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\About.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\Demo.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\Tutorijal.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\NoviTip.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\NoviTip1.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\PregledTipova.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\NovaVrsta.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\NovaVrsta1.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\PregledVrsta.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\App.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Projekat_MarkupCompile.cache
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Projekat.g.resources
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Projekat.Properties.Resources.resources
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Projekat.csproj.GenerateResource.Cache
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\Pomoc.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Help\Pomoc.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\IzmjenaEtikete.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\IzmjenaEtikete.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\IzmjenaTipa.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Tip\IzmjenaTipa.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\IzmjenaVrste.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\IzmjenaVrste.g.cs

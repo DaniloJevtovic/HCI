@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 
+using Projekat.Help;
+
 namespace Projekat.Tip
 {
     /// <summary>
@@ -26,7 +28,7 @@ namespace Projekat.Tip
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
@@ -51,7 +53,8 @@ namespace Projekat.Tip
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new Pomoc();
+            s.Show();
         }
     }
 }

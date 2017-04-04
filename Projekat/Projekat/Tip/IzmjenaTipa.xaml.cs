@@ -10,18 +10,15 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Microsoft.Win32;
 
-using Projekat.Help;
-
-namespace Projekat.Vrsta
+namespace Projekat.Tip
 {
     /// <summary>
-    /// Interaction logic for NovaVrsta1.xaml
+    /// Interaction logic for IzmjenaTipa.xaml
     /// </summary>
-    public partial class NovaVrsta1 : Window
+    public partial class IzmjenaTipa : Window
     {
-        public NovaVrsta1()
+        public IzmjenaTipa()
         {
             InitializeComponent();
         }
@@ -38,23 +35,12 @@ namespace Projekat.Vrsta
 
         private void btnIkonica_Click(object sender, RoutedEventArgs e)
         {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            
 
-            fileDialog.Title = "Izaberi ikonicu";
-            fileDialog.Filter = "Images|*.jpg;*.jpeg;*.png|" +
-                                "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
-                                "Portable Network Graphic (*.png)|*.png";
-            if (fileDialog.ShowDialog() == true)
-            {
-                Ikonica.Source = new BitmapImage(new Uri(fileDialog.FileName));
-            }
         }
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
-            var s = new Pomoc();
-            s.Show();
+
         }
     }
 }

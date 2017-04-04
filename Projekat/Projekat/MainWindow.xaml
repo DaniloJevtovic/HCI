@@ -17,10 +17,10 @@
             </Menu.ItemsPanel>
             -->
             
-            <MenuItem Header="_Dodaj">
-                <MenuItem Header="_Nova vrsta" Click="NovaVrsta_Click"></MenuItem>
-                <MenuItem Header="_Novi tip" Click="NoviTip_Click"></MenuItem>
-                <MenuItem Header="_Nova etiketa" Click="NovaEtiketa_Click"></MenuItem>
+            <MenuItem Header="_Dodaj" Background="White" >
+                <MenuItem Header="_Nova vrsta" Click="NovaVrsta_Click" Background="White"></MenuItem>
+                <MenuItem Header="_Novi tip" Click="NoviTip_Click" Background="White"></MenuItem>
+                <MenuItem Header="_Nova etiketa" Click="NovaEtiketa_Click" Background="White"></MenuItem>
             </MenuItem>
             
             <MenuItem Header="_Pregled" Background="White">
@@ -29,10 +29,10 @@
                 <MenuItem Header="_Pregled etiketa" Click="PregledEtiketa_Click" Background="White"></MenuItem>
             </MenuItem>
             
-            <MenuItem Header="_Pomoć">
-                <MenuItem Header="_Tutorijal" Click="Tutorijal_Click"></MenuItem>
-                <MenuItem Header="_DEMO" Click="Demo_Click"></MenuItem>
-                <MenuItem Header="_O Aplikaciji" Click="About_Click"></MenuItem>
+            <MenuItem Header="_Pomoć" Background="White">
+                <MenuItem Header="_Tutorijal" Click="Tutorijal_Click" Background="White"></MenuItem>
+                <MenuItem Header="_DEMO" Click="Demo_Click" Background="White"></MenuItem>
+                <MenuItem Header="_O Aplikaciji" Click="About_Click" Background="White"></MenuItem>
             </MenuItem>
         </Menu>
         
