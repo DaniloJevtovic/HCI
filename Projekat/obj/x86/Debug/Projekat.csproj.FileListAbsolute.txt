@@ -1,0 +1,11 @@
+C:\Users\Lemur\Desktop\Projekat\Projekat\bin\Debug\Projekat.exe
+C:\Users\Lemur\Desktop\Projekat\Projekat\bin\Debug\Projekat.pdb
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\MainWindow.baml
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\App.g.cs
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\Projekat_MarkupCompile.cache
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\Projekat.g.resources
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\Projekat.Properties.Resources.resources
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\Projekat.csproj.GenerateResource.Cache
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\Projekat.exe
+C:\Users\Lemur\Desktop\Projekat\Projekat\obj\x86\Debug\Projekat.pdb

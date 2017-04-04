@@ -1,0 +1,78 @@
+﻿<Window x:Class="Projekat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="Ugrožene vrste"  mc:Ignorable="d"  Height="655" Width="1132"
+        Icon="/Projekat;component/Images/logo.png"
+        WindowState="Maximized"
+        WindowStartupLocation="CenterScreen">
+    <DockPanel>
+        <!--menu-->
+        <Menu DockPanel.Dock="Top" Background="White">
+            <!--<Menu.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <DockPanel HorizontalAlignment="Stretch"></DockPanel>
+                </ItemsPanelTemplate>
+            </Menu.ItemsPanel>
+            -->
+            
+            <MenuItem Header="_Dodaj">
+                <MenuItem Header="_Nova vrsta" Click="NovaVrsta_Click"></MenuItem>
+                <MenuItem Header="_Novi tip" Click="NoviTip_Click"></MenuItem>
+                <MenuItem Header="_Nova etiketa" Click="NovaEtiketa_Click"></MenuItem>
+            </MenuItem>
+            
+            <MenuItem Header="_Pregled" Background="White">
+                <MenuItem Header="_Pregled vrsta" Click="PregledVrsta_Click" Background="White"></MenuItem>
+                <MenuItem Header="_Pregled tipova" Click="PregledTipova_Click" Background="White"></MenuItem>
+                <MenuItem Header="_Pregled etiketa" Click="PregledEtiketa_Click" Background="White"></MenuItem>
+            </MenuItem>
+            
+            <MenuItem Header="_Pomoć">
+                <MenuItem Header="_Tutorijal" Click="Tutorijal_Click"></MenuItem>
+                <MenuItem Header="_DEMO" Click="Demo_Click"></MenuItem>
+                <MenuItem Header="_O Aplikaciji" Click="About_Click"></MenuItem>
+            </MenuItem>
+        </Menu>
+        
+        
+        <!--toolbar-->
+        <!--<ToolBarPanel DockPanel.Dock="Top" Background="White">
+            <ToolBar Background="White">
+                <Button>Dodaj</Button>
+                <Button>Pregled</Button>
+                <Button>Pomoc</Button>
+                <Button>DEMO</Button>
+            </ToolBar>
+        </ToolBarPanel>
+        -->
+    
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition Width="374*" />
+            </Grid.ColumnDefinitions>
+            
+            <!--lijeva strana-->
+            <Canvas Grid.Column="0">
+                <Canvas.Background>
+                    <SolidColorBrush Color="White"></SolidColorBrush>
+                </Canvas.Background>
+
+                <ListBox>
+                    <Label HorizontalContentAlignment="Center" Content="Ugrožene vrste" Width="190"></Label>
+                </ListBox>
+            </Canvas>
+            
+            <!--desna strana-->
+            <Canvas Grid.Column="1">
+                <Canvas.Background>
+                    <ImageBrush ImageSource="map.gif" ></ImageBrush>
+                </Canvas.Background>
+            </Canvas>
+        </Grid>
+        
+    </DockPanel>
+   
+</Window>
