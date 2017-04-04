@@ -31,7 +31,6 @@
             <Button Content="Pomoć" Margin="3,3,3,3" Click="btnPomoc_Click" Height="23" Width="103" />
         </WrapPanel>
 
-
         <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" />
         <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" />
 

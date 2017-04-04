@@ -28,7 +28,7 @@
         <ComboBox Grid.Column="1" Grid.Row="2" Margin="3,3,3,3">
             <ComboBoxItem Content="crvena"></ComboBoxItem>
             <ComboBoxItem Content="crna"></ComboBoxItem>
-            <ComboBoxItem Content="Plava"></ComboBoxItem>
+            <ComboBoxItem Content="plava"></ComboBoxItem>
             <ComboBoxItem Content="žuta"></ComboBoxItem>
             <ComboBoxItem Content="bijela"></ComboBoxItem>
             <ComboBoxItem Content="zelena"></ComboBoxItem>

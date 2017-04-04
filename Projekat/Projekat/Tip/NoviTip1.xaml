@@ -23,10 +23,10 @@
         </WrapPanel>
 
 
-        <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1" Margin="3,3,3,3" HorizontalAlignment="Center"/>
+        <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center"/>
         <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" />
 
-        <Label Content="Ime:" Grid.Column="0" Grid.Row="2" Margin="3,3,3,3" HorizontalAlignment="Center"/>
+        <Label Content="Ime:" Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Center"/>
         <TextBox  Name="txtIme" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3"/>
 
         <Label Content="Ikonica:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center"/>
