@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Projekat.Etiketa.NovaEtiketa1"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="/Projekat;component/Images/logo.png"
         Title="Nova etiketa" Height="231" Width="285" MinHeight="231" MinWidth="285" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -21,11 +22,11 @@
             <Button Content="Pomoć" Margin="3,3,3,3" Click="btnPomoc_Click" Height="23" Width="103" />
         </WrapPanel>
                 
-        <Label Content="Opis:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" />
-        <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" />
+        <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" />
+        <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" Text="{Binding Path=Oznaka, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Content="Boja:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="2" Margin="3,3,3,3">
+        <ComboBox Name="cmBoja" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3" IsEditable="True" IsReadOnly="True" Text="*Odaberite boju" >
             <ComboBoxItem Content="crvena"></ComboBoxItem>
             <ComboBoxItem Content="crna"></ComboBoxItem>
             <ComboBoxItem Content="plava"></ComboBoxItem>
@@ -40,7 +41,7 @@
         <!--<TextBox  Name="txtBoja" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3"/> -->
 
         <Label Content="Opis:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" />
-        <TextBox Name="txtOpis" Grid.Column="1" Grid.Row="3" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3,3,3,3" />
+        <TextBox Name="txtOpis" Grid.Column="1" Grid.Row="3" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3,3,3,3" Text="{Binding Path=Opis}" />
 
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,10" >
             <Grid>
@@ -52,5 +53,5 @@
                 <Button Margin="3,3,5,3" Grid.Column="1" Content="Odustani" Click="btnOdustani_Click" Width="70" />
             </Grid>
         </StackPanel>
-    </Grid>
+    </Grid>    
 </Window>

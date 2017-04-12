@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Projekat.Tip.PregledTipova"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="/Projekat;component/Images/logo.png"
         Title="PregledTipova" Height="444" Width="569" Name="UI" WindowStartupLocation="CenterScreen">
     <Grid>
         <StackPanel DataContext="{Binding ElementName=UI}" Margin="12">

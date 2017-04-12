@@ -63,15 +63,13 @@
     <Compile Include="Etiketa\IzmjenaEtikete.xaml.cs">
       <DependentUpon>IzmjenaEtikete.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Etiketa\NovaEtiketa.xaml.cs">
-      <DependentUpon>NovaEtiketa.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Etiketa\NovaEtiketa1.xaml.cs">
       <DependentUpon>NovaEtiketa1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Etiketa\PregledEtiketa.xaml.cs">
       <DependentUpon>PregledEtiketa.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Etiketa\SerijalizacijaEtikete.cs" />
     <Compile Include="Help\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>
     </Compile>
@@ -87,9 +85,6 @@
     <Compile Include="Tip\IzmjenaTipa.xaml.cs">
       <DependentUpon>IzmjenaTipa.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tip\NoviTip.xaml.cs">
-      <DependentUpon>NoviTip.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Tip\NoviTip1.xaml.cs">
       <DependentUpon>NoviTip1.xaml</DependentUpon>
     </Compile>
@@ -100,9 +95,6 @@
     <Compile Include="Vrsta\IzmjenaVrste.xaml.cs">
       <DependentUpon>IzmjenaVrste.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vrsta\NovaVrsta.xaml.cs">
-      <DependentUpon>NovaVrsta.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Vrsta\NovaVrsta1.xaml.cs">
       <DependentUpon>NovaVrsta1.xaml</DependentUpon>
     </Compile>
@@ -111,10 +103,6 @@
     </Compile>
     <Compile Include="Vrsta\Vrsta.cs" />
     <Page Include="Etiketa\IzmjenaEtikete.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Etiketa\NovaEtiketa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -158,10 +146,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Tip\NoviTip.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Tip\NoviTip1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -171,10 +155,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Vrsta\IzmjenaVrste.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Vrsta\NovaVrsta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

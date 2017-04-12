@@ -1,6 +1,7 @@
 ﻿<Window x:Class="Projekat.Tip.IzmjenaTipa"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Icon="/Projekat;component/Images/logo.png"
         Title="Izmjena tipa" Height="312" Width="336" MinHeight="312" MinWidth="336" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
