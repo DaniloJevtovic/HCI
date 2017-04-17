@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<ArrayOfEtiketaA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EtiketaA>
+    <Oznaka>dasdas</Oznaka>
+    <Boja>žuta</Boja>
+    <Opis>sdasda</Opis>
+  </EtiketaA>
+  <EtiketaA>
+    <Oznaka>dasda</Oznaka>
+    <Boja>plava</Boja>
+    <Opis>dasdas</Opis>
+  </EtiketaA>
+  <EtiketaA>
+    <Oznaka>hfghfg</Oznaka>
+    <Boja>crna</Boja>
+    <Opis>hfghf</Opis>
+  </EtiketaA>
+</ArrayOfEtiketaA>

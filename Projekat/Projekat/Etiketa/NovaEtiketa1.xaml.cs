@@ -23,99 +23,36 @@ namespace Projekat.Etiketa
     /// <summary>
     /// Interaction logic for NovaEtiketa1.xaml
     /// </summary>
-    public partial class NovaEtiketa1 : Window, INotifyPropertyChanged
+    public partial class NovaEtiketa1 : Window
     {
-        public Etiketa etiketa;
-        [XmlArray("Etikete"), XmlArrayItem(typeof(Etiketa), ElementName = "Etiketaaa")]
-        public List<Etiketa> etikete;
-        
+        private ViewModel vm;
+
+        public class ViewModel
+        {
+            public EtiketaA Etiketa { get; set; }
+        }
+
         public NovaEtiketa1()
         {
             InitializeComponent();
-            etiketa = new Etiketa();
-            etikete = new List<Etiketa>();
+            vm = new ViewModel();
+            vm.Etiketa = new EtiketaA();
 
-            //etikete = ucitajDatoteku("etikete");
- 
-        }
-
-        public void sacuvajDatoteku(String fileName)
-        {
-            using(FileStream stream = new FileStream(fileName, FileMode.Append))
-            {
-                var serializer = new XmlSerializer(typeof(List<Etiketa>));
-                serializer.Serialize(stream, etikete);
-            }
-        }
-
-        public static List<Etiketa> ucitajDatoteku(String fileName)
-        {
-            using(var stream = new FileStream(fileName,FileMode.Open))
-            {
-                var deserializer = new XmlSerializer(typeof(List<Etiketa>));
-                return (List<Etiketa>)deserializer.Deserialize(stream);
-            }
-        }
-
-        public void dodajEtiketu()
-        {
-            etiketa.Oznaka = txtOznaka.Text;
-            etiketa.Boja = cmBoja.Text;
-            etiketa.Opis = txtOpis.Text;
-
-            etikete.Add(etiketa);
-            sacuvajDatoteku("etikete");
-        }
-
-        /*
-        public void dodajEtiketu(Etiketa et)
-        {
-            etiketa.Oznaka = txtOznaka.Text;
-            etiketa.Boja = cmBoja.Text;
-            etiketa.Opis = txtOpis.Text;
-  
-            etikete.Add(et);
-
-            sacuvajDatoteku(etikete);
-        }
-
-        public void sacuvajDatoteku(List<Etiketa> etiketee)
-        {
-            XmlSerializer serializer = new XmlSerializer(typeof(List<Etiketa>));
-            using (TextWriter writer = new StreamWriter("etikete.xml"))
-            {
-                serializer.Serialize(writer, etiketee);
-            }
-        }
-
-        public void ucitajDatoteku()
-        {
-            XmlSerializer deserializer = new XmlSerializer(typeof(List<Etiketa>));
-            TextReader reader = new StreamReader("etikete.xml");
-            object obj = deserializer.Deserialize(reader);
+            //vm.Etiketa.Oznaka = txtOpis.Text;
+            //vm.Etiketa.Boja = cmBoja.Text;
+            //vm.Etiketa.Opis = txtOpis.Text;
+            this.DataContext = vm;
             
-
         }
-        */
-
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
-        }
-
 
         #region Click
 
         
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            //dodajEtiketu(etiketa);
-            dodajEtiketu();
+            SerijalizacijaEtikete.deserijalizacijaEtikete();
+            Podaci.getInstance().Etikete.Add(vm.Etiketa);   //u listu etiketa dodaje etiketu
+            SerijalizacijaEtikete.serijalizacijaEtikete();
             this.Close();
         }
 

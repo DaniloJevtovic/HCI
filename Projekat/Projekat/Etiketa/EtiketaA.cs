@@ -7,14 +7,14 @@ using System.Xml.Serialization;
 
 namespace Projekat.Etiketa
 {
-    [XmlRoot("Etiketa")]
-    //[Serializable]
-    public class Etiketa: INotifyPropertyChanged
+    [Serializable]
+    public class EtiketaA: INotifyPropertyChanged
     {
         private string _oznaka;
         private string _boja;
         private string _opis;
-        private List<Etiketa> etikete;
+        
+        public EtiketaA() { }
 
         public string Oznaka 
         {
@@ -62,23 +62,6 @@ namespace Projekat.Etiketa
                 {
                     _opis = value;
                     OnPropertyChanged("Opis");
-                }
-            }
-        }
-
-        public List<Etiketa> Etikete
-        {
-            get
-            {
-                return etikete;
-            }
-
-            set
-            {
-                if (value != etikete)
-                {
-                    etikete = value;
-                    OnPropertyChanged("Etikete");
                 }
             }
         }

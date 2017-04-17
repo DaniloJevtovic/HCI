@@ -23,10 +23,10 @@
         </WrapPanel>
                 
         <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" />
-        <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" Text="{Binding Path=Oznaka, UpdateSourceTrigger=PropertyChanged}" />
+        <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" Text="{Binding Path=Etiketa.Oznaka, UpdateSourceTrigger=PropertyChanged}" />
 
         <Label Content="Boja:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" />
-        <ComboBox Name="cmBoja" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3" IsEditable="True" IsReadOnly="True" Text="*Odaberite boju" >
+        <ComboBox Name="cmBoja" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3"  Text="{Binding Path=Etiketa.Boja, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem Content="crvena"></ComboBoxItem>
             <ComboBoxItem Content="crna"></ComboBoxItem>
             <ComboBoxItem Content="plava"></ComboBoxItem>
@@ -41,7 +41,7 @@
         <!--<TextBox  Name="txtBoja" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3"/> -->
 
         <Label Content="Opis:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" />
-        <TextBox Name="txtOpis" Grid.Column="1" Grid.Row="3" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3,3,3,3" Text="{Binding Path=Opis}" />
+        <TextBox Name="txtOpis" Grid.Column="1" Grid.Row="3" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3,3,3,3" Text="{Binding Path=Etiketa.Opis}" />
 
         <StackPanel Grid.Column="1" Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,10" >
             <Grid>

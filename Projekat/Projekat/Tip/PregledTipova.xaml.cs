@@ -60,7 +60,7 @@ namespace Projekat.Tip
 
         public bool Filter(object obj)
         {
-            var data = obj as Tip;
+            var data = obj as TipP;
             if (data != null)
             {
                 if (!string.IsNullOrEmpty(_filterString))
@@ -72,15 +72,15 @@ namespace Projekat.Tip
             return false;
         }
 
-        public IEnumerable<Tip> TestData
+        public IEnumerable<TipP> TestData
         {
             get
             {
-                yield return new Tip { Oznaka = "132", Ime = "tigar", Ikonica = "/", Opis = "dasddas lskdjalskda" };
-                yield return new Tip { Oznaka = "232", Ime = "africki slon", Ikonica = "/", Opis = "dasdd sdkjalskdjalskda" };
-                yield return new Tip { Oznaka = "812", Ime = "divlji konj", Ikonica = "/", Opis = "dasds dalsd kjal skdjalskda" };
-                yield return new Tip { Oznaka = "484", Ime = "lemur", Ikonica = "/", Opis = "dasdas das dgfg " };
-                yield return new Tip { Oznaka = "315", Ime = "delfin", Ikonica = "/", Opis = "dasddasdalsdkjalskdjalskda" };
+                yield return new TipP { Oznaka = "132", Ime = "tigar", Ikonica = "/", Opis = "dasddas lskdjalskda" };
+                yield return new TipP { Oznaka = "232", Ime = "africki slon", Ikonica = "/", Opis = "dasdd sdkjalskdjalskda" };
+                yield return new TipP { Oznaka = "812", Ime = "divlji konj", Ikonica = "/", Opis = "dasds dalsd kjal skdjalskda" };
+                yield return new TipP { Oznaka = "484", Ime = "lemur", Ikonica = "/", Opis = "dasdas das dgfg " };
+                yield return new TipP { Oznaka = "315", Ime = "delfin", Ikonica = "/", Opis = "dasddasdalsdkjalskdjalskda" };
             }
         }
 

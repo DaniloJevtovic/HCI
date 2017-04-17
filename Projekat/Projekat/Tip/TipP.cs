@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Projekat.Tip
 {
-    public class Tip
+    public class TipP
     {
         public string Oznaka { get; set; }
         public string Ime { get; set; }

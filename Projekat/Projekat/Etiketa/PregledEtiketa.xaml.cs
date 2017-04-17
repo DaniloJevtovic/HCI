@@ -11,86 +11,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Collections.ObjectModel;
+using System.Data;
+using System.IO;
 
 namespace Projekat.Etiketa
 {
     /// <summary>
     /// Interaction logic for PregledEtiketa.xaml
     /// </summary>
-    public partial class PregledEtiketa : Window, INotifyPropertyChanged
+    public partial class PregledEtiketa : Window
     {
-        private ICollectionView _dataGridCollection;
-        private string _filterString;
+        private string file = "etikete.xml";
 
         public PregledEtiketa()
         {
             InitializeComponent();
-            DataGridCollection = CollectionViewSource.GetDefaultView(TestData);
-            DataGridCollection.Filter = new Predicate<object>(Filter);
-        }
 
-        public ICollectionView DataGridCollection
-        {
-            get { return _dataGridCollection; }
-            set
-            {
-                _dataGridCollection = value;
-                NotifyPropertyChanged("DataGridCollection");
-            }
-        }
+            DataSet dataSet = new DataSet();
+            if (File.Exists(file) == false)
+                SerijalizacijaEtikete.serijalizacijaEtikete();
+            
+            dataSet.ReadXml(file);
+            DataView dataView = new DataView(dataSet.Tables[0]);
+            EtiketeTable.ItemsSource = dataView;
+            EtiketeTable.UpdateLayout();
 
-        public string FilterString
-        {
-            get { return _filterString; }
-            set
-            {
-                _filterString = value;
-                NotifyPropertyChanged("FilterString");
-                FilterCollection();
-            }
-        }
-
-        private void FilterCollection()
-        {
-            if (_dataGridCollection != null)
-            {
-                _dataGridCollection.Refresh();
-            }
-        }
-
-        public bool Filter(object obj)
-        {
-            var data = obj as Etiketa;
-            if (data != null)
-            {
-                if (!string.IsNullOrEmpty(_filterString))
-                {
-                    return data.Oznaka.Contains(_filterString) || data.Boja.Contains(_filterString);
-                }
-                return true;
-            }
-            return false;
-        }
-
-        public IEnumerable<Etiketa> TestData
-        {
-            get
-            {
-                yield return new Etiketa { Oznaka = "913", Boja = "crna", Opis = "fsdfsd dfsdfs" };
-                yield return new Etiketa { Oznaka = "224", Boja = "bjela", Opis = "fsdfsd" };
-                yield return new Etiketa { Oznaka = "321", Boja = "plava", Opis = "dfsdfs dfs dfsfs" };
-                yield return new Etiketa { Oznaka = "432", Boja = "crvena", Opis = "dfsdfs fdsdfsdfsdfsdffghf" };
-                yield return new Etiketa { Oznaka = "521", Boja = "zuta", Opis = "hgfhfgh dfswer" };
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
+            //this.DataContext = this;
+            
         }
 
         #region Click

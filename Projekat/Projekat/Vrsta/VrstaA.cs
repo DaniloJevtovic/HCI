@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Projekat.Vrsta
 {
-    public class Vrsta
+    public class VrstaA
     {
         public string Oznaka { get; set; }
         public string Ime { get; set; }
