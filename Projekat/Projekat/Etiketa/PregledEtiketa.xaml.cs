@@ -41,6 +41,30 @@ namespace Projekat.Etiketa
             
         }
 
+      /*  
+        private void FilterCollection()
+        {
+            if (_dataGridCollection != null)
+            {
+                _dataGridCollection.Refresh();
+            }
+        }
+
+        public bool Filter(object obj)
+        {
+            var data = obj as EtiketaA;
+            if (data != null)
+            {
+                if (!string.IsNullOrEmpty(_filterString))
+                {
+                    return data.Oznaka.Contains(_filterString) || data.Ime.Contains(_filterString);
+                }
+                return true;
+            }
+            return false;
+        }
+         */
+
         #region Click
 
         private void btnDodaj_Click(object sender, RoutedEventArgs e)

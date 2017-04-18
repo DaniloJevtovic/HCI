@@ -37,15 +37,28 @@
         </Menu>
         
         <!--toolbar-->
-        <!--<ToolBarPanel DockPanel.Dock="Top" Background="White">
+        <ToolBarPanel DockPanel.Dock="Top" Background="White">
             <ToolBar Background="White">
-                <Button>Dodaj</Button>
-                <Button>Pregled</Button>
+                <Button Click="NovaVrsta_Click">Dodaj Vrstu</Button>
+                <Separator Width="1"></Separator>
+                <Button Click="PregledVrsta_Click">Pregled vrsta</Button>
+                <Separator Width="10" ></Separator>
+                
+                <Button Click="NoviTip_Click">Dodaj Tip</Button>
+                <Separator Width="1"></Separator>
+                <Button Click="PregledTipova_Click">Pregled tipova</Button>
+                <Separator Width="10"></Separator>
+                
+                <Button Click="NovaEtiketa_Click">Dodaj etiketu</Button>
+                <Separator Width="1"></Separator>
+                <Button Click="PregledEtiketa_Click">Pregled etiketa</Button>
+                <Separator Width="10"></Separator>
+                
                 <Button>Pomoc</Button>
                 <Button>DEMO</Button>
             </ToolBar>
         </ToolBarPanel>
-        -->
+        
     
         <Grid>
             <Grid.ColumnDefinitions>

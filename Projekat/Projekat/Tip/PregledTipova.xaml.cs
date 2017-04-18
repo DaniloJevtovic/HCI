@@ -11,86 +11,25 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Data;
 
 namespace Projekat.Tip
 {
-    /// <summary>
-    /// Interaction logic for PregledTipova.xaml
-    /// </summary>
-    public partial class PregledTipova : Window, INotifyPropertyChanged
+    public partial class PregledTipova : Window
     {
-        private ICollectionView _dataGridCollection;
-        private string _filterString;
+        private string file = "tipovi.xml";
 
         public PregledTipova()
         {
             InitializeComponent();
-            DataGridCollection = CollectionViewSource.GetDefaultView(TestData);
-            DataGridCollection.Filter = new Predicate<object>(Filter);
-        }
 
-        public ICollectionView DataGridCollection
-        {
-            get { return _dataGridCollection; }
-            set
-            {
-                _dataGridCollection = value;
-                NotifyPropertyChanged("DataGridCollection");
-            }
-        }
+            DataSet dataSet = new DataSet();
 
-        public string FilterString
-        {
-            get { return _filterString; }
-            set
-            {
-                _filterString = value;
-                NotifyPropertyChanged("FilterString");
-                FilterCollection();
-            }
-        }
+            dataSet.ReadXml(file);
+            DataView dataView = new DataView(dataSet.Tables[0]);
+            TipoviTabela.ItemsSource = dataView;
+            TipoviTabela.UpdateLayout();
 
-        private void FilterCollection()
-        {
-            if (_dataGridCollection != null)
-            {
-                _dataGridCollection.Refresh();
-            }
-        }
-
-        public bool Filter(object obj)
-        {
-            var data = obj as TipP;
-            if (data != null)
-            {
-                if (!string.IsNullOrEmpty(_filterString))
-                {
-                    return data.Oznaka.Contains(_filterString) || data.Ime.Contains(_filterString);
-                }
-                return true;
-            }
-            return false;
-        }
-
-        public IEnumerable<TipP> TestData
-        {
-            get
-            {
-                yield return new TipP { Oznaka = "132", Ime = "tigar", Ikonica = "/", Opis = "dasddas lskdjalskda" };
-                yield return new TipP { Oznaka = "232", Ime = "africki slon", Ikonica = "/", Opis = "dasdd sdkjalskdjalskda" };
-                yield return new TipP { Oznaka = "812", Ime = "divlji konj", Ikonica = "/", Opis = "dasds dalsd kjal skdjalskda" };
-                yield return new TipP { Oznaka = "484", Ime = "lemur", Ikonica = "/", Opis = "dasdas das dgfg " };
-                yield return new TipP { Oznaka = "315", Ime = "delfin", Ikonica = "/", Opis = "dasddasdalsdkjalskdjalskda" };
-            }
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
         }
 
         #region Click

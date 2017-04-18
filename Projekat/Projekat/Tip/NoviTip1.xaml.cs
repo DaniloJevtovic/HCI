@@ -21,13 +21,27 @@ namespace Projekat.Tip
     /// </summary>
     public partial class NoviTip1 : Window
     {
+        private ViewModel vm;
+
+        public class ViewModel
+        {
+            public TipP Tip { get; set; }
+        }
+
         public NoviTip1()
         {
             InitializeComponent();
+            
+            vm = new ViewModel();
+            vm.Tip = new TipP();
+            this.DataContext = vm;
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
+            SerijalizacijaTipa.deserijalizacijaTipa();
+            Podaci.getInstance().Tipovi.Add(vm.Tip);
+            SerijalizacijaTipa.serijalizacijaTipa();
             this.Close();
         }
 

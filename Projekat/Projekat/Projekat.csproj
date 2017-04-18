@@ -92,6 +92,7 @@
     <Compile Include="Tip\PregledTipova.xaml.cs">
       <DependentUpon>PregledTipova.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tip\SerijalizacijaTipa.cs" />
     <Compile Include="Tip\TipP.cs" />
     <Compile Include="Vrsta\IzmjenaVrste.xaml.cs">
       <DependentUpon>IzmjenaVrste.xaml</DependentUpon>
@@ -102,6 +103,7 @@
     <Compile Include="Vrsta\PregledVrsta.xaml.cs">
       <DependentUpon>PregledVrsta.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Vrsta\SerijalizacijaVrste.cs" />
     <Compile Include="Vrsta\VrstaA.cs" />
     <Page Include="Etiketa\IzmjenaEtikete.xaml">
       <SubType>Designer</SubType>

@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<ArrayOfTipP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <TipP>
+    <Oznaka>lemur</Oznaka>
+    <Ime>1234</Ime>
+    <Opis>dasdasda</Opis>
+  </TipP>
+  <TipP>
+    <Oznaka>gdghfd sdf sdf s</Oznaka>
+    <Ime>fsdf sdf </Ime>
+    <Opis>sdfsdfs df</Opis>
+  </TipP>
+  <TipP>
+    <Oznaka>fsd</Oznaka>
+    <Ime>fsdfsdf</Ime>
+    <Opis>sdfsdfs</Opis>
+  </TipP>
+  <TipP>
+    <Oznaka>fgdgfd</Oznaka>
+    <Ime>fgdfgdf</Ime>
+    <Opis>gdfgdf</Opis>
+  </TipP>
+  <TipP>
+    <Oznaka>,likjlkjk</Oznaka>
+    <Ime>ljkljljkljk</Ime>
+    <Opis>ljkljklj</Opis>
+  </TipP>
+</ArrayOfTipP>

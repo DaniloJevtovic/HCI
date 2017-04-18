@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 
 using Projekat.Etiketa;
+using Projekat.Tip;
+using Projekat.Vrsta;
+
 using System.ComponentModel;
 
 namespace Projekat
@@ -13,11 +16,14 @@ namespace Projekat
         private static Podaci instance = null;
         
         private List<EtiketaA> etikete;
-        
+        private List<TipP> tipovi;
+        private List<VrstaA> vrste;
 
         private Podaci()
         {
             this.etikete = new List<EtiketaA>();
+            this.tipovi = new List<TipP>();
+            this.vrste = new List<VrstaA>();
         }
 
         public static Podaci getInstance()
@@ -44,8 +50,39 @@ namespace Projekat
             }
         }
 
+        public List<TipP> Tipovi
+        {
+            get
+            {
+                return tipovi;
+            }
 
+            set
+            {
+                if (value != tipovi)
+                {
+                    tipovi = value;
+                    OnPropertyChanged("Tipovi");
+                }
+            }
+        }
 
+        public List<VrstaA> Vrste
+        {
+            get
+            {
+                return vrste;
+            }
+
+            set
+            {
+                if (value != vrste)
+                {
+                    vrste = value;
+                    OnPropertyChanged("Vrste");
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
