@@ -25,4 +25,9 @@
     <Ime>ljkljljkljk</Ime>
     <Opis>ljkljklj</Opis>
   </TipP>
+  <TipP>
+    <Oznaka>fsdfsdfs</Oznaka>
+    <Ime>dfsdfsd</Ime>
+    <Opis>fsdfsdfsd</Opis>
+  </TipP>
 </ArrayOfTipP>

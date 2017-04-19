@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.ComponentModel;
+using System.Data;
 
 namespace Projekat.Vrsta
 {
@@ -19,9 +20,18 @@ namespace Projekat.Vrsta
     /// </summary>
     public partial class PregledVrsta : Window
     {
+        private string file = "vrste.xml";
+
         public PregledVrsta()
         {
             InitializeComponent();
+
+            DataSet dataSet = new DataSet();
+
+            dataSet.ReadXml(file);
+            DataView dataView = new DataView(dataSet.Tables[0]);
+            VrsteTabela.ItemsSource = dataView;
+            VrsteTabela.UpdateLayout();
         }
 
         #region Click

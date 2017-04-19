@@ -29,7 +29,6 @@ namespace Projekat.Tip
             DataView dataView = new DataView(dataSet.Tables[0]);
             TipoviTabela.ItemsSource = dataView;
             TipoviTabela.UpdateLayout();
-
         }
 
         #region Click

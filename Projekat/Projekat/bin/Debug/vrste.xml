@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<ArrayOfVrstaA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <VrstaA>
+    <Oznaka>dawqwesdasda</Oznaka>
+    <Ime>fdxcvxcvxcvx</Ime>
+    <Opis>fasdfsdcvxcvxcvx</Opis>
+    <Tip>fdsfsdfsdfsd</Tip>
+    <Etiketa>cvxcvxcvxcv</Etiketa>
+    <StUgr>Ugrožena</StUgr>
+    <OpZaLjude>true</OpZaLjude>
+    <NaIucn>true</NaIucn>
+    <ZiviUNasMjes>true</ZiviUNasMjes>
+    <TurStatus>Djelimično habituirana</TurStatus>
+    <GodPrihod>223</GodPrihod>
+    <DatOtkr>0001-01-01T00:00:00</DatOtkr>
+  </VrstaA>
+  <VrstaA>
+    <Oznaka>vxc</Oznaka>
+    <Ime>vxcv</Ime>
+    <Opis>xcvxc</Opis>
+    <Tip>vxcv</Tip>
+    <Etiketa>xcvxc</Etiketa>
+    <StUgr>Ugrožena</StUgr>
+    <OpZaLjude>false</OpZaLjude>
+    <NaIucn>false</NaIucn>
+    <ZiviUNasMjes>false</ZiviUNasMjes>
+    <TurStatus>Djelimično habituirana</TurStatus>
+    <GodPrihod>4</GodPrihod>
+    <DatOtkr>0001-01-01T00:00:00</DatOtkr>
+  </VrstaA>
+</ArrayOfVrstaA>

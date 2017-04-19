@@ -21,13 +21,27 @@ namespace Projekat.Vrsta
     /// </summary>
     public partial class NovaVrsta1 : Window
     {
+        private ViewModel vm;
+
+        public class ViewModel
+        {
+            public VrstaA Vrsta { get; set; }
+        }
+
         public NovaVrsta1()
         {
             InitializeComponent();
+
+            vm = new ViewModel();
+            vm.Vrsta = new VrstaA();
+            this.DataContext = vm;
         }
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
+            SerijalizacijaVrste.deserijalizacijaVrste();
+            Podaci.getInstance().Vrste.Add(vm.Vrsta);
+            SerijalizacijaVrste.serijalizacijaVrste();
             this.Close();
         }
 

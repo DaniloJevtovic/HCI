@@ -24,7 +24,7 @@ namespace Projekat.Vrsta
 
         }
 
-        public static void deserijalizacijaEtikete()
+        public static void deserijalizacijaVrste()
         {
             if (File.Exists(file) == false) //ako ne postoji fajl 
                 serijalizacijaVrste();
