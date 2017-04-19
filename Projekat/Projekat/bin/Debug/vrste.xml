@@ -28,4 +28,18 @@
     <GodPrihod>4</GodPrihod>
     <DatOtkr>0001-01-01T00:00:00</DatOtkr>
   </VrstaA>
+  <VrstaA>
+    <Oznaka>fdsfs</Oznaka>
+    <Ime>dfsd</Ime>
+    <Opis>fsdfsd</Opis>
+    <Tip>fsdfsdf</Tip>
+    <Etiketa>sdfsd</Etiketa>
+    <StUgr>Ugrožena</StUgr>
+    <OpZaLjude>true</OpZaLjude>
+    <NaIucn>false</NaIucn>
+    <ZiviUNasMjes>true</ZiviUNasMjes>
+    <TurStatus>Izolovana</TurStatus>
+    <GodPrihod>33343</GodPrihod>
+    <DatOtkr>0001-01-01T00:00:00</DatOtkr>
+  </VrstaA>
 </ArrayOfVrstaA>
