@@ -54,7 +54,8 @@
                 <Button Click="PregledEtiketa_Click">Pregled etiketa</Button>
                 <Separator Width="10"></Separator>
                 
-                <Button>Pomoc</Button>
+                <Button>Pomoć</Button>
+                <Separator Width="1"></Separator>
                 <Button>DEMO</Button>
             </ToolBar>
         </ToolBarPanel>

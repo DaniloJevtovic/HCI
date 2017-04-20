@@ -5,25 +5,25 @@
         Title="Pregled vrsta" Name="UI"  Height="620" Width="1000" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="26*" />
-            <RowDefinition Height="324*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
-        <StackPanel DataContext="{Binding ElementName=UI}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Label Content="Pretraga:"/>
-                <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
-                <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3" ></Button>
-                <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3" ></Button>
-                <Button Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
-            </Grid>
-        </StackPanel>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Content="Pretraga:"/>
+            <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
+            <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3" ></Button>
+            <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3" ></Button>
+            <Button Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
+        </Grid>
+
         <DataGrid x:Name="VrsteTabela" ItemsSource="{Binding Vrste}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka}" Width="4*" />
@@ -33,14 +33,14 @@
                 <DataGridTextColumn Header="Etiketa" Binding="{Binding Etiketa}" Width="4*"/>
                 <DataGridTextColumn Header="Status &#10;ugroženosti" Binding="{Binding StUgr}" Width="6*"/>
                 <DataGridTextColumn Header="Ikonica" Binding="{Binding Ikonica}" Width="5*"/>
-                
+
                 <DataGridCheckBoxColumn Header="Opasna za&#10;ljude?" Binding="{Binding OpZaLjude}" Width="4.5*"/>
                 <DataGridCheckBoxColumn Header="Na IUCN &#10;listi" Binding="{Binding NaIucn}" Width="4*"/>
                 <DataGridCheckBoxColumn Header="Živi u naseljenom &#10;regionu?" Binding="{Binding ZiviUNasMjes}" Width="6.5*"/>
-               
+
                 <DataGridTextColumn Header="Turistički &#10;status" Binding="{Binding TurStatus}" Width="4*"/>
                 <DataGridTextColumn Header="Godišnji prihod&#10;od turizma" Binding="{Binding GodPrihod}" Width="6*"/>
-                <DataGridTextColumn Header="Datum &#10;otkrivanja" Binding="{Binding DatOtkr}" Width="6*"/>
+                <DataGridTextColumn Header="Datum &#10;otkrivanja" Binding="{Binding DatOtkr, StringFormat=\{0:dd.MM.yy\}}" Width="6*"/>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

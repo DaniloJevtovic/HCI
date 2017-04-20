@@ -55,13 +55,14 @@ namespace Projekat.Tip
             OpenFileDialog fileDialog = new OpenFileDialog();
 
 
-            fileDialog.Title = "Izaberi ikonicu";
+            fileDialog.Title = "Izaberite ikonicu";
             fileDialog.Filter = "Images|*.jpg;*.jpeg;*.png|" +
                                 "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                                 "Portable Network Graphic (*.png)|*.png";
             if (fileDialog.ShowDialog() == true)
             {
                 Ikonica.Source = new BitmapImage(new Uri(fileDialog.FileName));
+                vm.Tip.Ikonica = fileDialog.FileName;
             }
         }
 

@@ -1,58 +1,21 @@
 <?xml version="1.0"?>
 <ArrayOfTipP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TipP>
-    <Oznaka>lemur</Oznaka>
-    <Ime>1234</Ime>
-    <Opis>dasdasda</Opis>
+    <Oznaka>123</Oznaka>
+    <Ime>2131</Ime>
+    <Ikonica>C:\Users\Lemur\Pictures\54cac0d178c83_-_digital_antenna_0311-de.jpg</Ikonica>
+    <Opis>2312weqeqw dsfsdf</Opis>
   </TipP>
   <TipP>
-    <Oznaka>gdghfd sdf sdf s</Oznaka>
-    <Ime>fsdf sdf </Ime>
-    <Opis>sdfsdfs df</Opis>
+    <Oznaka>bdfgdf</Oznaka>
+    <Ime>gdfgdfgd</Ime>
+    <Ikonica>C:\Users\Lemur\Pictures\biquad_size.png</Ikonica>
+    <Opis>gdfgdfgdfd</Opis>
   </TipP>
   <TipP>
-    <Oznaka>fsd</Oznaka>
-    <Ime>fsdfsdf</Ime>
-    <Opis>sdfsdfs</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>fgdgfd</Oznaka>
-    <Ime>fgdfgdf</Ime>
-    <Opis>gdfgdf</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>,likjlkjk</Oznaka>
-    <Ime>ljkljljkljk</Ime>
-    <Opis>ljkljklj</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>fsdfsdfs</Oznaka>
-    <Ime>dfsdfsd</Ime>
-    <Opis>fsdfsdfsd</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>dasd</Oznaka>
-    <Ime>asdasd</Ime>
-    <Opis>das</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>aaaaaaaaaaaaaaaa</Oznaka>
-    <Ime>aaaaaaaaaaa</Ime>
-    <Opis>aaaaaaaaaaaa</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>fsdfsd</Oznaka>
-    <Ime>fsdfsdf</Ime>
-    <Opis>sdfsdfs</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>dasda</Oznaka>
-    <Ime>sdasdas</Ime>
-    <Opis>sdasdas</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>eqdasdasdas</Oznaka>
-    <Ime>daasdasdasdxczxczxczxczxc</Ime>
-    <Opis>zxcxzczxczxczxczxczxczx</Opis>
+    <Oznaka>ghfghfgh f</Oznaka>
+    <Ime>ghfgh fgh f</Ime>
+    <Ikonica>C:\Users\Lemur\Pictures\SonyXperiaS-LT26-ManualUserGuide-KeysPartsPanelLayout-Resume.jpg</Ikonica>
+    <Opis>gd fgd gdf gfg d</Opis>
   </TipP>
 </ArrayOfTipP>

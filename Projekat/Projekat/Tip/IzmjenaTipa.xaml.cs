@@ -10,6 +10,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Microsoft.Win32;
 
 namespace Projekat.Tip
 {
@@ -35,7 +36,18 @@ namespace Projekat.Tip
 
         private void btnIkonica_Click(object sender, RoutedEventArgs e)
         {
+            OpenFileDialog fileDialog = new OpenFileDialog();
 
+
+            fileDialog.Title = "Izaberite ikonicu";
+            fileDialog.Filter = "Images|*.jpg;*.jpeg;*.png|" +
+                                "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
+                                "Portable Network Graphic (*.png)|*.png";
+            if (fileDialog.ShowDialog() == true)
+            {
+                Ikonica.Source = new BitmapImage(new Uri(fileDialog.FileName));
+                //vm.Tip.Ikonica = fileDialog.FileName;
+            }
         }
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)

@@ -5,32 +5,34 @@
         Title="PregledTipova" Height="500" Width="825" Name="UI" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="26*"></RowDefinition>
-            <RowDefinition Height="379*"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
+            <RowDefinition Height="Auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" DataContext="{Binding ElementName=UI}" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Label Content="Pretraga:"/>
-                <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
-                <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3"></Button>
-                <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3"></Button>
-                <Button Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
-            </Grid>
-        </StackPanel>
-        <DataGrid x:Name="TipoviTabela" ItemsSource="{Binding Tipovi}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False">
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Content="Pretraga:"/>
+            <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
+            <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3"></Button>
+            <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3"></Button>
+            <Button Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
+        </Grid>
+        
+      
+        <DataGrid x:Name="TipoviTabela" ItemsSource="{Binding Tipovi, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" Height="Auto">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka}" Width="3*" />
-                <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="3*" />
-                <DataGridTextColumn Header="Ikonica" Binding="{Binding Ikonica}" Width="3*"/>
-                <DataGridTextColumn Header="Naziv" Binding="{Binding Opis}" Width="3*"/>
-            </DataGrid.Columns>      
+                <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka, UpdateSourceTrigger=PropertyChanged}" Width="3*" />
+                <DataGridTextColumn Header="Ime" Binding="{Binding Ime, UpdateSourceTrigger=PropertyChanged}" Width="3*" />
+                <DataGridTextColumn Header="Ikonica" Binding="{Binding Ikonica, UpdateSourceTrigger=PropertyChanged}" Width="3*"/>
+                <DataGridTextColumn Header="Naziv" Binding="{Binding Opis, UpdateSourceTrigger=PropertyChanged}" Width="3*"/>
+            </DataGrid.Columns>
         </DataGrid>
+
     </Grid>
 </Window>

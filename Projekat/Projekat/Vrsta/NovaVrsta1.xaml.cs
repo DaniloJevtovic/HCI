@@ -62,6 +62,7 @@ namespace Projekat.Vrsta
             if (fileDialog.ShowDialog() == true)
             {
                 Ikonica.Source = new BitmapImage(new Uri(fileDialog.FileName));
+                vm.Vrsta.Ikonica = fileDialog.FileName;
             }
         }
 
