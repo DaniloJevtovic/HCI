@@ -13,15 +13,17 @@ using System.Windows.Shapes;
 using Microsoft.Win32;
 
 using Projekat.Help;
+using Projekat.Tip;
+using System.Data;
+using System.Collections;
 
 namespace Projekat.Vrsta
 {
-    /// <summary>
-    /// Interaction logic for NovaVrsta1.xaml
-    /// </summary>
     public partial class NovaVrsta1 : Window
     {
         private ViewModel vm;
+
+        private string tip;
 
         public class ViewModel
         {
@@ -31,6 +33,8 @@ namespace Projekat.Vrsta
         public NovaVrsta1()
         {
             InitializeComponent();
+
+            this.tip = _tipTxt.Text;
 
             vm = new ViewModel();
             vm.Vrsta = new VrstaA();
@@ -69,7 +73,25 @@ namespace Projekat.Vrsta
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
             var s = new Pomoc();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
+        }
+
+        private void OdaberTipa_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new OdabirTipa(tip);
+            if (s.ShowDialog().Equals(true)) { }
+            if(s.result != "")  //u slucaju da se ponovo klikne na biranje tipa pa se ne odabere nista da ne bi ponistio predhodno obrisano
+                _tipTxt.Text = s.result;
+        }
+
+        private void OdabirEtikete_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new OdabirEtikete();
+            if (s.ShowDialog().Equals(true)) { }
+            if (s.result != "")  //u slucaju da se ponovo klikne na biranje etikete pa se ne odabere nista da ne bi ponistio predhodno obrisano
+                _etiketaTxt.Text = s.result;
+           
         }
     }
 }

@@ -64,7 +64,8 @@ namespace Projekat.Etiketa
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
             var s = new Pomoc();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
         #endregion
     }

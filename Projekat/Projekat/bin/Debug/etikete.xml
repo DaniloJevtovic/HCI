@@ -51,4 +51,9 @@
     <Boja>crna</Boja>
     <Opis>khjkh</Opis>
   </EtiketaA>
+  <EtiketaA>
+    <Oznaka>nmn,</Oznaka>
+    <Boja>crna</Boja>
+    <Opis>mn</Opis>
+  </EtiketaA>
 </ArrayOfEtiketaA>

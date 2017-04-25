@@ -28,6 +28,10 @@ namespace Projekat
         {
             InitializeComponent();
             WindowStartupLocation = System.Windows.WindowStartupLocation.CenterScreen;  //glavni prozor se prikazuje u centru
+
+            SerijalizacijaEtikete.deserijalizacijaEtikete();
+            SerijalizacijaTipa.deserijalizacijaTipa();
+            SerijalizacijaVrste.deserijalizacijaVrste();
         }
 
 
@@ -36,56 +40,65 @@ namespace Projekat
         private void NovaVrsta_Click(object sender, RoutedEventArgs e)
         {
             var s = new NovaVrsta1();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void NoviTip_Click(object sender, RoutedEventArgs e)
         {
             var s = new NoviTip1();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void NovaEtiketa_Click(object sender, RoutedEventArgs e)
         {
             var s = new NovaEtiketa1();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void PregledVrsta_Click(object sender, RoutedEventArgs e)
         {
             var s = new PregledVrsta();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void PregledTipova_Click(object sender, RoutedEventArgs e)
         {
             var s = new PregledTipova();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void PregledEtiketa_Click(object sender, RoutedEventArgs e)
         {
             var s = new PregledEtiketa();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
    
         private void Tutorijal_Click(object sender, RoutedEventArgs e)
         {
             var s = new Tutorijal();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void Demo_Click(object sender, RoutedEventArgs e)
         {
             var s = new Demo();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void About_Click(object sender, RoutedEventArgs e)
         {
             var s = new About();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
      
         #endregion Click

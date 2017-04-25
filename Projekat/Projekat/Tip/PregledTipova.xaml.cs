@@ -17,32 +17,36 @@ namespace Projekat.Tip
 {
     public partial class PregledTipova : Window
     {
-        private string file = "tipovi.xml";
+        //private string file = "tipovi.xml";
 
         public PregledTipova()
         {
             InitializeComponent();
 
+            TipoviTabela.ItemsSource = Podaci.getInstance().Tipovi;
+            /*
             DataSet dataSet = new DataSet();
-
             dataSet.ReadXml(file);
             DataView dataView = new DataView(dataSet.Tables[0]);
             TipoviTabela.ItemsSource = dataView;
             TipoviTabela.UpdateLayout();
+             * */
         }
 
         #region Click
 
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
-            var s = new NoviTip1();
-            s.Show();
+            var s = new NoviTip1(TipoviTabela);
+            //var s = new NoviTip1();
+            if(s.ShowDialog().Equals(true)){}   //modalni dijalog ;)
         }
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
         {
             var s = new IzmjenaTipa();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void btnObrisi_Click(object sender, RoutedEventArgs e)

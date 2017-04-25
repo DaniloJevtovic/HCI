@@ -16,22 +16,31 @@ using Projekat.Help;
 
 namespace Projekat.Tip
 {
-    /// <summary>
-    /// Interaction logic for NoviTip1.xaml
-    /// </summary>
     public partial class NoviTip1 : Window
     {
         private ViewModel vm;
+        DataGrid dg;
 
         public class ViewModel
         {
             public TipP Tip { get; set; }
         }
 
+        public NoviTip1(DataGrid d) //konstruktor kada dodajes iz pregleda kako bi osvjezio pregled
+        {
+            InitializeComponent();
+
+            this.dg = d;
+            vm = new ViewModel();
+            vm.Tip = new TipP();
+            this.DataContext = vm;
+        }
+
         public NoviTip1()
         {
             InitializeComponent();
-            
+
+            this.dg = new DataGrid();
             vm = new ViewModel();
             vm.Tip = new TipP();
             this.DataContext = vm;
@@ -42,6 +51,7 @@ namespace Projekat.Tip
             SerijalizacijaTipa.deserijalizacijaTipa();
             Podaci.getInstance().Tipovi.Add(vm.Tip);
             SerijalizacijaTipa.serijalizacijaTipa();
+            this.dg.ItemsSource = Podaci.getInstance().Tipovi;  //!pazi
             this.Close();
         }
 
@@ -69,7 +79,8 @@ namespace Projekat.Tip
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
             var s = new Pomoc();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
     }
 }

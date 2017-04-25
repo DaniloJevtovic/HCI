@@ -39,13 +39,15 @@ namespace Projekat.Vrsta
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
             var s = new NovaVrsta1();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
         {
             var s = new IzmjenaVrste();
-            s.Show();
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
         }
 
         private void btnObrisi_Click(object sender, RoutedEventArgs e)

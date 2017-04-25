@@ -179,3 +179,7 @@ C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\IzmjenaVrste.g.cs
 C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\NovaEtiketa1.baml
 C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Etiketa\NovaEtiketa1.g.cs
 C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Projekat.csprojResolveAssemblyReference.cache
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\OdabirTipa.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\OdabirTipa.g.cs
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\OdabirEtikete.baml
+C:\Users\Lemur\GIT\HCI\Projekat\Projekat\obj\x86\Debug\Vrsta\OdabirEtikete.g.cs
