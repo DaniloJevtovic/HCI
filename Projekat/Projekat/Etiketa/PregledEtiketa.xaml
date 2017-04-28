@@ -22,10 +22,13 @@
             <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
             <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3"></Button>
             <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3"></Button>
-            <Button Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
+            <Button x:Name="btnObrisi" Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
         </Grid>
 
-        <DataGrid  x:Name="EtiketeTable" ItemsSource="{Binding Path=Etikete}" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+        <DataGrid  x:Name="EtiketeTable" ItemsSource="{Binding Path=Etikete, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Black"/>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Oznaka etikete" Width="*" Binding="{Binding Oznaka}"/>
                 <DataGridTextColumn Header="Boja etikete" Width="*" Binding="{Binding Boja}"/>

@@ -15,19 +15,22 @@ using System.Collections.ObjectModel;
 using System.Data;
 using System.IO;
 
+
 namespace Projekat.Etiketa
 {
-    /// <summary>
-    /// Interaction logic for PregledEtiketa.xaml
-    /// </summary>
     public partial class PregledEtiketa : Window
     {
-        private string file = "etikete.xml";
+        //private string file = "etikete.xml";
+        //public string result = "";
+        private string filterString;
 
         public PregledEtiketa()
         {
             InitializeComponent();
 
+            EtiketeTable.ItemsSource = Podaci.getInstance().Etikete;
+            
+            /*
             DataSet dataSet = new DataSet();
             if (File.Exists(file) == false)
                 SerijalizacijaEtikete.serijalizacijaEtikete();
@@ -38,15 +41,73 @@ namespace Projekat.Etiketa
             EtiketeTable.UpdateLayout();
 
             //this.DataContext = this;
-            
+            */
         }
 
-      /*  
+        #region Click
+
+        private void btnDodaj_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new NovaEtiketa1(EtiketeTable);
+            if (s.ShowDialog().Equals(true)) { }
+            //s.Show();
+        }
+
+        private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
+        {
+            if (EtiketeTable.SelectedItem != null)
+            {
+                EtiketaA et = (EtiketaA)EtiketeTable.SelectedItem;
+                int ind = EtiketeTable.SelectedIndex;
+
+                var s = new IzmjenaEtikete(et, ind);
+                if (s.ShowDialog().Equals(true)) { }
+                //s.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Niste selektovali etiketu");
+            }
+        }
+
+        private void btnObrisi_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(EtiketaA et in Podaci.getInstance().Etikete.ToList())
+            {
+                if (et.Equals(EtiketeTable.SelectedItem))
+                {
+                    MessageBoxResult msg = MessageBox.Show("Da li ste sigurni da želite da obrišete selektovanu etiketu?", "Potvrda brisanja etikete", MessageBoxButton.YesNo);
+
+                    if (msg == MessageBoxResult.Yes)
+                    {
+                        Podaci.getInstance().Etikete.Remove(et);
+                        SerijalizacijaEtikete.serijalizacijaEtikete();
+                        EtiketeTable.Items.Refresh();   //napokon!
+                    }
+                }
+            }
+        }
+
+        #endregion Click
+
+        #region Search
+
+        public string FilterString
+        {
+            get { return filterString; }
+            set
+            {
+                filterString = value;
+                NotifyPropertyChanged("FilterString");
+            }
+        }
+
         private void FilterCollection()
         {
-            if (_dataGridCollection != null)
+            if (EtiketeTable != null)
             {
-                _dataGridCollection.Refresh();
+                EtiketeTable.Items.Refresh();
             }
         }
 
@@ -55,38 +116,25 @@ namespace Projekat.Etiketa
             var data = obj as EtiketaA;
             if (data != null)
             {
-                if (!string.IsNullOrEmpty(_filterString))
+                if(!string.IsNullOrEmpty(filterString))
                 {
-                    return data.Oznaka.Contains(_filterString) || data.Ime.Contains(_filterString);
+                    return data.Oznaka.Contains(filterString) || data.Boja.Contains(filterString);  //po oznaci i boji
                 }
-                return true;
             }
+
             return false;
         }
-         */
 
-        #region Click
-
-        private void btnDodaj_Click(object sender, RoutedEventArgs e)
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(string property)
         {
-            var s = new NovaEtiketa1();
-            if (s.ShowDialog().Equals(true)) { }
-            //s.Show();
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(property));
+            }
         }
 
-        private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
-        {
-            var s = new IzmjenaEtikete();
-            if (s.ShowDialog().Equals(true)) { }
-            //s.Show();
-        }
-
-        private void btnObrisi_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        #endregion Click
+        #endregion Search
     }
 
 }

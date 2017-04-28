@@ -13,11 +13,23 @@ using System.Windows.Shapes;
 
 namespace Projekat.Etiketa
 {
-    /// <summary>
-    /// Interaction logic for IzmjenaEtikete.xaml
-    /// </summary>
     public partial class IzmjenaEtikete : Window
     {
+        EtiketaA et;
+        int ind;
+
+        public IzmjenaEtikete(EtiketaA etiketa, int index)
+        {
+            InitializeComponent();
+
+            et = etiketa;
+            ind = index;
+
+            this.txtOznaka.Text = etiketa.Oznaka;
+            this.txtBoja.Text = etiketa.Boja;
+            this.txtOpis.Text = etiketa.Opis;
+        }
+
         public IzmjenaEtikete()
         {
             InitializeComponent();
@@ -25,6 +37,15 @@ namespace Projekat.Etiketa
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
+            Podaci.getInstance().Etikete.RemoveAt(ind);
+            SerijalizacijaEtikete.serijalizacijaEtikete();
+
+            et.Oznaka = txtOznaka.Text;
+            et.Opis = txtOpis.Text;
+            et.Boja = txtBoja.Text;
+
+            Podaci.getInstance().Etikete.Insert(ind, et);
+            SerijalizacijaEtikete.serijalizacijaEtikete();
             this.Close();
         }
 

@@ -9,13 +9,16 @@
             <RowDefinition Height="Auto" />
         </Grid.RowDefinitions>
 
-        <DataGrid Grid.Row="0" x:Name="EtiketeTabelaOdb" ItemsSource="{Binding Tipovi, UpdateSourceTrigger=PropertyChanged}"  IsReadOnly="True" AutoGenerateColumns="False" Height="Auto">
+        <DataGrid Grid.Row="0" x:Name="EtiketeTabelaOdb" ItemsSource="{Binding Tipovi, UpdateSourceTrigger=PropertyChanged}"  IsReadOnly="True" AutoGenerateColumns="False" Height="Auto" SelectionMode="Single">
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Black"/>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka, UpdateSourceTrigger=PropertyChanged}" Width="3*"/>
                 <DataGridTextColumn Header="Boja" Binding="{Binding Boja, UpdateSourceTrigger=PropertyChanged}" Width="3*"  />
             </DataGrid.Columns>
         </DataGrid>
 
-        <Button Grid.Row="1" Content="Odaberite" Click="Odaberi_Click"></Button>
+        <Button Grid.Row="1" Content="Odaberite" Click="Odaberi_Click" Margin="3,3,3,3" ></Button>
     </Grid>
 </Window>

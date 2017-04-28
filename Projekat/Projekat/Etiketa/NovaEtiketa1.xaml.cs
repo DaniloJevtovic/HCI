@@ -16,33 +16,39 @@ using System.Xml.Serialization;
 using Projekat.Help;
 using System.ComponentModel;
 
-
-
 namespace Projekat.Etiketa
 {
-    /// <summary>
-    /// Interaction logic for NovaEtiketa1.xaml
-    /// </summary>
     public partial class NovaEtiketa1 : Window
     {
         private ViewModel vm;
+        DataGrid dg;
 
         public class ViewModel
         {
             public EtiketaA Etiketa { get; set; }
         }
 
+        public NovaEtiketa1(DataGrid d) //konstruktor kada dodajes iz pregleda kako bi osvjezio pregled
+        {
+            InitializeComponent();
+
+            this.dg = d;
+            vm = new ViewModel();
+            vm.Etiketa = new EtiketaA();
+            this.DataContext = vm;
+        }
+
         public NovaEtiketa1()
         {
             InitializeComponent();
+
+            this.dg = new DataGrid();
             vm = new ViewModel();
             vm.Etiketa = new EtiketaA();
-
+            this.DataContext = vm;
             //vm.Etiketa.Oznaka = txtOpis.Text;
             //vm.Etiketa.Boja = cmBoja.Text;
             //vm.Etiketa.Opis = txtOpis.Text;
-            this.DataContext = vm;
-            
         }
 
         #region Click
@@ -53,6 +59,7 @@ namespace Projekat.Etiketa
             SerijalizacijaEtikete.deserijalizacijaEtikete();
             Podaci.getInstance().Etikete.Add(vm.Etiketa);   //u listu etiketa dodaje etiketu
             SerijalizacijaEtikete.serijalizacijaEtikete();
+            this.dg.ItemsSource = Podaci.getInstance().Etikete;  //!pazi
             this.Close();
         }
 

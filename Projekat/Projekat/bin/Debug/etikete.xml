@@ -1,59 +1,18 @@
 <?xml version="1.0"?>
 <ArrayOfEtiketaA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EtiketaA>
-    <Oznaka>dasdas</Oznaka>
+    <Oznaka>123</Oznaka>
+    <Boja>lubičasta</Boja>
+    <Opis>3323</Opis>
+  </EtiketaA>
+  <EtiketaA>
+    <Oznaka>431</Oznaka>
     <Boja>žuta</Boja>
-    <Opis>sdasda</Opis>
+    <Opis>123sdd</Opis>
   </EtiketaA>
   <EtiketaA>
-    <Oznaka>dasda</Oznaka>
-    <Boja>plava</Boja>
-    <Opis>dasdas</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>hfghfg</Oznaka>
-    <Boja>crna</Boja>
-    <Opis>hfghf</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>hfghf</Oznaka>
-    <Boja>žuta</Boja>
-    <Opis>nbvn</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>da</Oznaka>
-  </EtiketaA>
-  <EtiketaA>
-    <Boja>zelena</Boja>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>fsdfs</Oznaka>
-    <Boja>plava</Boja>
-    <Opis>fsdfs</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>dasdasdas</Oznaka>
-    <Boja>narandzasta</Boja>
-    <Opis>das sdasda</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>olllllllllll</Oznaka>
-    <Boja>žuta</Boja>
-    <Opis>jhgjh</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>ljkjl</Oznaka>
-    <Boja>žuta</Boja>
-    <Opis>kljn,m</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>jkkh</Oznaka>
-    <Boja>crna</Boja>
-    <Opis>khjkh</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>nmn,</Oznaka>
-    <Boja>crna</Boja>
-    <Opis>mn</Opis>
+    <Oznaka>5555</Oznaka>
+    <Boja>bijela</Boja>
+    <Opis>dfsdfsdfs</Opis>
   </EtiketaA>
 </ArrayOfEtiketaA>

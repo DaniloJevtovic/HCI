@@ -24,6 +24,7 @@ namespace Projekat.Tip
             InitializeComponent();
 
             TipoviTabela.ItemsSource = Podaci.getInstance().Tipovi;
+            
             /*
             DataSet dataSet = new DataSet();
             dataSet.ReadXml(file);
@@ -39,18 +40,43 @@ namespace Projekat.Tip
         {
             var s = new NoviTip1(TipoviTabela);
             //var s = new NoviTip1();
-            if(s.ShowDialog().Equals(true)){}   //modalni dijalog ;)
+            if(s.ShowDialog().Equals(true)) { }   //modalni dijalog ;)
         }
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
         {
-            var s = new IzmjenaTipa();
-            if (s.ShowDialog().Equals(true)) { }
-            //s.Show();
+            if (TipoviTabela.SelectedItem != null)
+            {
+                TipP tip = (TipP)TipoviTabela.SelectedItem;
+                int ind = TipoviTabela.SelectedIndex;
+
+                var s = new IzmjenaTipa(tip, ind);
+                if (s.ShowDialog().Equals(true)) { }
+                //s.Show();
+            }
+
+            else
+            {
+                MessageBox.Show("Niste selektovali tip");
+            }
         }
 
         private void btnObrisi_Click(object sender, RoutedEventArgs e)
         {
+            foreach (TipP tip in Podaci.getInstance().Tipovi.ToList())
+            {
+                if (tip.Equals(TipoviTabela.SelectedItem))
+                {
+                    MessageBoxResult msg = MessageBox.Show("Da li ste sigurni da želite da obrišete selektovani tip?", "Potvrda brisanja tipa", MessageBoxButton.YesNo);
+
+                    if (msg == MessageBoxResult.Yes)
+                    {
+                        Podaci.getInstance().Tipovi.Remove(tip);
+                        SerijalizacijaTipa.serijalizacijaTipa();
+                        TipoviTabela.Items.Refresh();  
+                    }
+                }
+            }
 
         }
 

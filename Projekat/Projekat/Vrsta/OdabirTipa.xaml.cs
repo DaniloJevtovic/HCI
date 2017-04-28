@@ -24,7 +24,7 @@ namespace Projekat.Vrsta
         private string file = "tipovi.xml";
         public string result="";
 
-        public OdabirTipa(String tip)
+        public OdabirTipa()
         {
             InitializeComponent();
 
@@ -41,7 +41,7 @@ namespace Projekat.Vrsta
         {
             DataRowView drv = (DataRowView)TipoviTabelaOdb.SelectedItem;
             result = (drv["Oznaka"]).ToString();    //odabir tipa po oznaci, moze i po imenu
-            MessageBox.Show(result, "Odabrano");
+            //MessageBox.Show(result, "Odabrano");
             this.Close();          
         }
     }

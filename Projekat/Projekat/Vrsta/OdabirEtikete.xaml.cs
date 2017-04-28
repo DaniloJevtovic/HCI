@@ -34,7 +34,7 @@ namespace Projekat.Vrsta
         {
             DataRowView drv = (DataRowView)EtiketeTabelaOdb.SelectedItem;
             result = (drv["Oznaka"]).ToString();    //odabir etikete po oznaci, moze i po boji
-            MessageBox.Show(result, "Odabrano");
+            //MessageBox.Show(result, "Odabrano");
             this.Close(); 
         }
     }

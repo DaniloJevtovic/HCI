@@ -23,19 +23,32 @@ namespace Projekat.Vrsta
     {
         private ViewModel vm;
 
-        private string tip;
+        DataGrid dg;
 
         public class ViewModel
         {
             public VrstaA Vrsta { get; set; }
         }
 
+        public NovaVrsta1(DataGrid dg)  //konstruktor kada dodajes iz pregleda kako bi osvjezio pregled
+        {
+            InitializeComponent();
+
+            this.dg = dg;
+
+            vm = new ViewModel();
+            vm.Vrsta = new VrstaA();
+            this.DataContext = vm;
+
+            Datum.DisplayDateStart = DateTime.Today;
+        }
+
         public NovaVrsta1()
         {
             InitializeComponent();
 
-            this.tip = _tipTxt.Text;
-
+            this.dg = new DataGrid();
+            
             vm = new ViewModel();
             vm.Vrsta = new VrstaA();
             this.DataContext = vm;
@@ -46,6 +59,7 @@ namespace Projekat.Vrsta
             SerijalizacijaVrste.deserijalizacijaVrste();
             Podaci.getInstance().Vrste.Add(vm.Vrsta);
             SerijalizacijaVrste.serijalizacijaVrste();
+            this.dg.ItemsSource = Podaci.getInstance().Vrste;
             this.Close();
         }
 
@@ -59,7 +73,7 @@ namespace Projekat.Vrsta
             OpenFileDialog fileDialog = new OpenFileDialog();
             
 
-            fileDialog.Title = "Izaberi ikonicu";
+            fileDialog.Title = "Izaberite ikonicu";
             fileDialog.Filter = "Images|*.jpg;*.jpeg;*.png|" +
                                 "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                                 "Portable Network Graphic (*.png)|*.png";
@@ -79,7 +93,7 @@ namespace Projekat.Vrsta
 
         private void OdaberTipa_Click(object sender, RoutedEventArgs e)
         {
-            var s = new OdabirTipa(tip);
+            var s = new OdabirTipa();
             if (s.ShowDialog().Equals(true)) { }
             if(s.result != "")  //u slucaju da se ponovo klikne na biranje tipa pa se ne odabere nista da ne bi ponistio predhodno obrisano
                 _tipTxt.Text = s.result;

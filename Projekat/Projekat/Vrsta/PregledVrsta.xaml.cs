@@ -15,30 +15,29 @@ using System.Data;
 
 namespace Projekat.Vrsta
 {
-    /// <summary>
-    /// Interaction logic for PregledVrsta.xaml
-    /// </summary>
     public partial class PregledVrsta : Window
     {
-        private string file = "vrste.xml";
+        //private string file = "vrste.xml";
 
         public PregledVrsta()
         {
             InitializeComponent();
+            VrsteTabela.ItemsSource = Podaci.getInstance().Vrste;
 
-            DataSet dataSet = new DataSet();
+            /*DataSet dataSet = new DataSet();
 
             dataSet.ReadXml(file);
             DataView dataView = new DataView(dataSet.Tables[0]);
             VrsteTabela.ItemsSource = dataView;
             VrsteTabela.UpdateLayout();
+            */
         }
 
         #region Click
 
         private void btnDodaj_Click(object sender, RoutedEventArgs e)
         {
-            var s = new NovaVrsta1();
+            var s = new NovaVrsta1(VrsteTabela);
             if (s.ShowDialog().Equals(true)) { }
             //s.Show();
         }

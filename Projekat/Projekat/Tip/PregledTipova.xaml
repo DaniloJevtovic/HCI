@@ -26,6 +26,9 @@
         
       
         <DataGrid x:Name="TipoviTabela" ItemsSource="{Binding Tipovi, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" Height="Auto">
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Black"/>
+            </DataGrid.Resources>
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka, UpdateSourceTrigger=PropertyChanged}" Width="3*" />
                 <DataGridTextColumn Header="Ime" Binding="{Binding Ime, UpdateSourceTrigger=PropertyChanged}" Width="3*" />

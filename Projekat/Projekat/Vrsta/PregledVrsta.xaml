@@ -26,7 +26,10 @@
             </Grid>
 
             <DataGrid x:Name="VrsteTabela" ItemsSource="{Binding Vrste}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" >
-                <DataGrid.Columns>
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Black"/>
+            </DataGrid.Resources>
+            <DataGrid.Columns>
                     <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka}" Width="4*" />
                     <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="4*" />
                     <DataGridTextColumn Header="Opis" Binding="{Binding Opis}" Width="4*"/>
@@ -48,7 +51,7 @@
 
                     <DataGridTextColumn Header="Turistički &#10;status" Binding="{Binding TurStatus}" Width="4*"/>
                     <DataGridTextColumn Header="Godišnji prihod&#10;od turizma" Binding="{Binding GodPrihod}" Width="6*"/>
-                    <DataGridTextColumn Header="Datum &#10;otkrivanja" Binding="{Binding DatOtkr, StringFormat=\{0:dd.MM.yy\}}" Width="6*"/>
+                    <DataGridTextColumn Header="Datum &#10;otkrivanja" Binding="{Binding DatOtkr, StringFormat=\{0:dd.MM.yyyy\}}" Width="6*"/>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>

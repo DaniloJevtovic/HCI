@@ -64,7 +64,7 @@
         </Grid>
 
         <Label Grid.Column="0" Grid.Row="6" Content="_Status ugroženosti:" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="6" Margin="3,3,3,3" IsEditable="True" IsReadOnly="True" Text="*Odaberite status ugroženosti" >
+        <ComboBox Grid.Column="1" Grid.Row="6" Margin="3,3,3,3" >
             <ComboBoxItem Content="Kritično ugrožena"></ComboBoxItem>
             <ComboBoxItem Content="Ugrožena" />
             <ComboBoxItem Content="Ranjiva" />
@@ -100,7 +100,7 @@
         <TextBlock Text="(označiti ukoliko živi u naseljenom regionu)" Grid.Column="1" Grid.Row="10" Margin="3,0,0,0" />
 
         <Label Grid.Column="0" Grid.Row="11" Content="Turistički status:" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="11" Margin="3,3,3,3" IsEditable="True" IsReadOnly="True" Text="*Odaberite turistički status" >
+        <ComboBox Grid.Column="1" Grid.Row="11" Margin="3,3,3,3" >
             <ComboBoxItem Content="Izolovana" />
             <ComboBoxItem Content="Djelimično habituirana"/>
             <ComboBoxItem Content="Habituirana" />

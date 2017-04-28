@@ -7,7 +7,7 @@ using System.ComponentModel;
 namespace Projekat.Vrsta
 {
     [Serializable]
-    public class VrstaA
+    public class VrstaA : INotifyPropertyChanged
     {
         private string _oznaka;
         private string _ime;

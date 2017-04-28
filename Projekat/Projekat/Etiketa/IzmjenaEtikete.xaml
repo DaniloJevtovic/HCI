@@ -26,7 +26,7 @@
         <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" />
 
         <Label Content="Boja:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="2" Margin="3,3,3,3" IsEditable="True" IsReadOnly="True" Text="*Odaberite boju">
+        <ComboBox Name="txtBoja" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3" >
             <ComboBoxItem Content="crvena"></ComboBoxItem>
             <ComboBoxItem Content="crna"></ComboBoxItem>
             <ComboBoxItem Content="plava"></ComboBoxItem>

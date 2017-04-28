@@ -7,7 +7,7 @@ using System.ComponentModel;
 namespace Projekat.Tip
 {
     [Serializable]
-    public class TipP
+    public class TipP: INotifyPropertyChanged
     {
         private string _oznaka;
         private string _ime;
