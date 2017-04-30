@@ -62,7 +62,7 @@ namespace Projekat.Etiketa
 
                 var s = new IzmjenaEtikete(et, ind);
                 if (s.ShowDialog().Equals(true)) { }
-                //s.Show();
+                EtiketeTable.Items.Refresh();
             }
 
             else

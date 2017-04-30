@@ -63,7 +63,7 @@
         </Grid>
 
         <Label Grid.Column="0" Grid.Row="6" Content="_Status ugroženosti:" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="6" Margin="3,3,3,3" Text="{Binding Path=Vrsta.StUgr, UpdateSourceTrigger=PropertyChanged}" >
+        <ComboBox Name="txtStUgr" Grid.Column="1" Grid.Row="6" Margin="3,3,3,3" Text="{Binding Path=Vrsta.StUgr, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem Content="Kritično ugrožena"></ComboBoxItem>
             <ComboBoxItem Content="Ugrožena" />
             <ComboBoxItem Content="Ranjiva" />
@@ -89,24 +89,24 @@
             <Button Content="Dodaj ikonicu" Click="btnIkonica_Click" Margin="1,5,65,39" Height="22" Width="93" Grid.Column="1" />
         </Grid>
 
-        <CheckBox Content="Opasna za ljude?" Grid.Column="0" Grid.Row="8" Margin="3" IsChecked="{Binding Path=Vrsta.OpZaLjude}" />
+        <CheckBox Name="opZaLjude" Content="Opasna za ljude?" Grid.Column="0" Grid.Row="8" Margin="3" IsChecked="{Binding Path=Vrsta.OpZaLjude}" />
         <TextBlock Text="(označiti ukoliko je opasna za ljude)" Grid.Column="1" Grid.Row="8" Margin="3,0,0,0"/>
 
-        <CheckBox Content="Na IUCN crvenoj listi?" Grid.Column="0" Grid.Row="9" Margin="3" IsChecked="{Binding Path=Vrsta.NaIucn}" />
+        <CheckBox Name="naIucn" Content="Na IUCN crvenoj listi?" Grid.Column="0" Grid.Row="9" Margin="3" IsChecked="{Binding Path=Vrsta.NaIucn}" />
         <TextBlock Text="(označiti ukoliko je na IUCN crvenoj listi)" Grid.Column="1" Grid.Row="9" Margin="3,0,0,0"/>
 
-        <CheckBox Content="Živi u naseljenom regionu?" Grid.Column="0" Grid.Row="10" Margin="3" IsChecked="{Binding Path=Vrsta.ZiviUNasMjes}"/>
+        <CheckBox Name="uNas" Content="Živi u naseljenom regionu?" Grid.Column="0" Grid.Row="10" Margin="3" IsChecked="{Binding Path=Vrsta.ZiviUNasMjes}"/>
         <TextBlock Text="(označiti ukoliko živi u naseljenom regionu)" Grid.Column="1" Grid.Row="10" Margin="3,0,0,0" />
 
         <Label Grid.Column="0" Grid.Row="11" Content="Turistički status:" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="11" Margin="3,3,3,3" Text="{Binding Path=Vrsta.TurStatus, UpdateSourceTrigger=PropertyChanged}" >
+        <ComboBox Name="turStat" Grid.Column="1" Grid.Row="11" Margin="3,3,3,3" Text="{Binding Path=Vrsta.TurStatus, UpdateSourceTrigger=PropertyChanged}" >
             <ComboBoxItem Content="Izolovana" />
             <ComboBoxItem Content="Djelimično habituirana"/>
             <ComboBoxItem Content="Habituirana" />
         </ComboBox>
 
         <Label Grid.Column="0" Grid.Row="12" Content="Godišnji prihod od turizma: ($)" HorizontalAlignment="Center"/>
-        <TextBox Grid.Column="1" Grid.Row="12" Margin="3" TextAlignment="Right" Text="{Binding Path=Vrsta.GodPrihod, UpdateSourceTrigger=PropertyChanged}"/>
+        <TextBox Name="godPrihod" Grid.Column="1" Grid.Row="12" Margin="3" TextAlignment="Right" Text="{Binding Path=Vrsta.GodPrihod, UpdateSourceTrigger=PropertyChanged}"/>
 
         <Label Grid.Column="0" Grid.Row="13" Content="Datum otrkivanja:" HorizontalAlignment="Center"/>
         <DatePicker x:Name="Datum" Grid.Column="1" Grid.Row="13" Margin="3" SelectedDate="{Binding Path=Vrsta.DatOtkr, UpdateSourceTrigger=PropertyChanged}"  >

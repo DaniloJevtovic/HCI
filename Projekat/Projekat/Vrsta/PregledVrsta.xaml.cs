@@ -44,13 +44,37 @@ namespace Projekat.Vrsta
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
         {
-            var s = new IzmjenaVrste();
-            if (s.ShowDialog().Equals(true)) { }
-            //s.Show();
+            if (VrsteTabela.SelectedItem != null)
+            {
+                VrstaA vrsta = (VrstaA)VrsteTabela.SelectedItem;
+                int ind = VrsteTabela.SelectedIndex;
+
+                var s = new IzmjenaVrste(vrsta, ind);
+                if (s.ShowDialog().Equals(true)) { }
+                VrsteTabela.Items.Refresh();
+            }
+            else
+            {
+                MessageBox.Show("Niste selektovali vrstu");
+            }
         }
 
         private void btnObrisi_Click(object sender, RoutedEventArgs e)
         {
+            foreach (VrstaA tip in Podaci.getInstance().Vrste.ToList())
+            {
+                if (tip.Equals(VrsteTabela.SelectedItem))
+                {
+                    MessageBoxResult msg = MessageBox.Show("Da li ste sigurni da želite da obrišete selektovanu vrstu?", "Potvrda brisanja tipa", MessageBoxButton.YesNo);
+
+                    if (msg == MessageBoxResult.Yes)
+                    {
+                        Podaci.getInstance().Vrste.Remove(tip);
+                        SerijalizacijaVrste.serijalizacijaVrste();
+                        VrsteTabela.Items.Refresh();
+                    }
+                }
+            }
 
         }
 

@@ -52,7 +52,7 @@ namespace Projekat.Tip
 
                 var s = new IzmjenaTipa(tip, ind);
                 if (s.ShowDialog().Equals(true)) { }
-                //s.Show();
+                TipoviTabela.Items.Refresh();
             }
 
             else

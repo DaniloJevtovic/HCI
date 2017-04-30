@@ -7,12 +7,17 @@
   </EtiketaA>
   <EtiketaA>
     <Oznaka>431</Oznaka>
-    <Boja>žuta</Boja>
-    <Opis>123sdd</Opis>
+    <Boja>zelena</Boja>
+    <Opis>123</Opis>
   </EtiketaA>
   <EtiketaA>
     <Oznaka>5555</Oznaka>
     <Boja>bijela</Boja>
     <Opis>dfsdfsdfs</Opis>
+  </EtiketaA>
+  <EtiketaA>
+    <Oznaka>ddddffffaa</Oznaka>
+    <Boja>plava</Boja>
+    <Opis>dddd</Opis>
   </EtiketaA>
 </ArrayOfEtiketaA>

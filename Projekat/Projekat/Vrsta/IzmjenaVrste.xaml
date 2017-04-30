@@ -32,12 +32,11 @@
             <Button Content="Pomoć" Margin="3,3,3,3" Click="btnPomoc_Click" Height="23" Width="103" />
         </WrapPanel>
 
-
         <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" />
         <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" />
 
         <Label Content="Ime:" Grid.Column="0" Grid.Row="2" HorizontalAlignment="Center" />
-        <TextBox  Name="txtIme" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3"/>
+        <TextBox  Name="txtIme" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3" />
 
         <Label Content="Opis:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" />
         <TextBox Name="txtOpis" Grid.Column="1" Grid.Row="3" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3,3,3,3" />
@@ -48,8 +47,8 @@
                 <ColumnDefinition Width="178*" />
                 <ColumnDefinition Width="109*" />
             </Grid.ColumnDefinitions>
-            <TextBox  Name="_tipTxt" Margin="3,3,1,3" Text="{Binding Path=Vrsta.Tip, UpdateSourceTrigger=PropertyChanged}" />
-            <Button Content="Odaberite tip" Margin="3,3,3,3" Grid.Column="1"></Button>
+            <TextBox  Name="_tipTxt" IsReadOnly="True" Margin="3,3,1,3" />
+            <Button Content="Odaberite tip"  Margin="3,3,3,3" Grid.Column="1" Click="OdaberTipa_Click"></Button>
         </Grid>
 
 
@@ -59,12 +58,12 @@
                 <ColumnDefinition Width="178*" />
                 <ColumnDefinition Width="109*" />
             </Grid.ColumnDefinitions>
-            <TextBox  Name="_etiketaTxt" Margin="3,3,1,3" Text="{Binding Path=Vrsta.Etiketa, UpdateSourceTrigger=PropertyChanged}" />
-            <Button Content="Odaberite etiketu" Margin="3,3,3,3" Grid.Column="1"></Button>
+            <TextBox  Name="_etiketaTxt" IsReadOnly="True" Margin="3,3,1,3" />
+            <Button Content="Odaberite etiketu" Margin="3,3,3,3" Grid.Column="1" Click="OdabirEtikete_Click"></Button>
         </Grid>
 
         <Label Grid.Column="0" Grid.Row="6" Content="_Status ugroženosti:" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="6" Margin="3,3,3,3" >
+        <ComboBox Name="txtStUgr" Grid.Column="1" Grid.Row="6" Margin="3,3,3,3" >
             <ComboBoxItem Content="Kritično ugrožena"></ComboBoxItem>
             <ComboBoxItem Content="Ugrožena" />
             <ComboBoxItem Content="Ranjiva" />
@@ -90,27 +89,26 @@
             <Button Content="Dodaj ikonicu" Click="btnIkonica_Click" Margin="1,5,65,39" Height="22" Width="93" Grid.Column="1" />
         </Grid>
 
-        <CheckBox Content="Opasna za ljude?" Grid.Column="0" Grid.Row="8" Margin="3" />
+        <CheckBox Name="opZaLjude" Content="Opasna za ljude?" Grid.Column="0" Grid.Row="8" Margin="3"  />
         <TextBlock Text="(označiti ukoliko je opasna za ljude)" Grid.Column="1" Grid.Row="8" Margin="3,0,0,0"/>
 
-        <CheckBox Content="Na IUCN crvenoj listi?" Grid.Column="0" Grid.Row="9" Margin="3" />
+        <CheckBox Name="naIucn" Content="Na IUCN crvenoj listi?" Grid.Column="0" Grid.Row="9" Margin="3" />
         <TextBlock Text="(označiti ukoliko je na IUCN crvenoj listi)" Grid.Column="1" Grid.Row="9" Margin="3,0,0,0"/>
 
-        <CheckBox Content="Živi u naseljenom regionu?" Grid.Column="0" Grid.Row="10" Margin="3" />
+        <CheckBox Name="uNas" Content="Živi u naseljenom regionu?" Grid.Column="0" Grid.Row="10" Margin="3" />
         <TextBlock Text="(označiti ukoliko živi u naseljenom regionu)" Grid.Column="1" Grid.Row="10" Margin="3,0,0,0" />
 
         <Label Grid.Column="0" Grid.Row="11" Content="Turistički status:" HorizontalAlignment="Center" />
-        <ComboBox Grid.Column="1" Grid.Row="11" Margin="3,3,3,3" >
+        <ComboBox Name="turStat" Grid.Column="1" Grid.Row="11" Margin="3,3,3,3" >
             <ComboBoxItem Content="Izolovana" />
             <ComboBoxItem Content="Djelimično habituirana"/>
             <ComboBoxItem Content="Habituirana" />
         </ComboBox>
 
         <Label Grid.Column="0" Grid.Row="12" Content="Godišnji prihod od turizma: ($)" HorizontalAlignment="Center"/>
-        <TextBox Grid.Column="1" Grid.Row="12" Margin="3" TextAlignment="Right"/>
-
+        <TextBox Name="godPrihod" Grid.Column="1" Grid.Row="12" Margin="3" TextAlignment="Right" />
         <Label Grid.Column="0" Grid.Row="13" Content="Datum otrkivanja:" HorizontalAlignment="Center"/>
-        <DatePicker Grid.Column="1" Grid.Row="13" Margin="3" SelectedDate="{Binding Path=Vrsta.DatOtkr, UpdateSourceTrigger=PropertyChanged}" >
+        <DatePicker x:Name="Datum" Grid.Column="1" Grid.Row="13" Margin="3" >
             <DatePicker.Resources>
                 <Style TargetType="DatePickerTextBox">
                     <Setter Property="Text" Value="Odaberite datum"/>

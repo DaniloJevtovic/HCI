@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ArrayOfTipP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TipP>
-    <Oznaka>123</Oznaka>
+    <Oznaka>123fff</Oznaka>
     <Ime>2131</Ime>
     <Ikonica>C:\Users\Lemur\Pictures\54cac0d178c83_-_digital_antenna_0311-de.jpg</Ikonica>
     <Opis>2312weqeqw dsfsdf</Opis>
@@ -164,11 +164,6 @@
     <Oznaka>dasda</Oznaka>
     <Ime>sdasdasd</Ime>
     <Opis>asda</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>2222222222</Oznaka>
-    <Ime>2222222222222222222222222222222222</Ime>
-    <Opis>222222</Opis>
   </TipP>
   <TipP>
     <Oznaka>33333</Oznaka>

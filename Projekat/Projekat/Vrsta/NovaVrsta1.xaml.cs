@@ -105,7 +105,6 @@ namespace Projekat.Vrsta
             if (s.ShowDialog().Equals(true)) { }
             if (s.result != "")  //u slucaju da se ponovo klikne na biranje etikete pa se ne odabere nista da ne bi ponistio predhodno obrisano
                 _etiketaTxt.Text = s.result;
-           
         }
     }
 }

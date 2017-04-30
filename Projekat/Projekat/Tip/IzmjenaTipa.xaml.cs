@@ -61,7 +61,6 @@ namespace Projekat.Tip
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
 
-
             fileDialog.Title = "Izaberite ikonicu";
             fileDialog.Filter = "Images|*.jpg;*.jpeg;*.png|" +
                                 "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
