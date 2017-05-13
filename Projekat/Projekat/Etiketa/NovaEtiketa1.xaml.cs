@@ -56,11 +56,18 @@ namespace Projekat.Etiketa
         
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            SerijalizacijaEtikete.deserijalizacijaEtikete();
-            Podaci.getInstance().Etikete.Add(vm.Etiketa);   //u listu etiketa dodaje etiketu
-            SerijalizacijaEtikete.serijalizacijaEtikete();
-            this.dg.ItemsSource = Podaci.getInstance().Etikete;  //!pazi
-            this.Close();
+            if (txtOznaka.Text != "" && txtOpis.Text != "" && cmBoja.Text != null)
+            {
+                SerijalizacijaEtikete.deserijalizacijaEtikete();
+                Podaci.getInstance().Etikete.Add(vm.Etiketa);   //u listu etiketa dodaje etiketu
+                SerijalizacijaEtikete.serijalizacijaEtikete();
+                this.dg.ItemsSource = Podaci.getInstance().Etikete;  //!pazi
+                this.Close();
+            }
+
+            else
+                MessageBox.Show("Niste popunili sva polja!!!");
+            
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

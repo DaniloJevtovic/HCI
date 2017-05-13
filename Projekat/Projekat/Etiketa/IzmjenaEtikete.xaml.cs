@@ -37,16 +37,21 @@ namespace Projekat.Etiketa
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Podaci.getInstance().Etikete.RemoveAt(ind);
-            SerijalizacijaEtikete.serijalizacijaEtikete();
+            if (txtOznaka.Text != "" && txtOpis.Text != "" && txtBoja.Text != null)
+            {
+                Podaci.getInstance().Etikete.RemoveAt(ind);
+                SerijalizacijaEtikete.serijalizacijaEtikete();
 
-            et.Oznaka = txtOznaka.Text;
-            et.Opis = txtOpis.Text;
-            et.Boja = txtBoja.Text;
+                et.Oznaka = txtOznaka.Text;
+                et.Opis = txtOpis.Text;
+                et.Boja = txtBoja.Text;
 
-            Podaci.getInstance().Etikete.Insert(ind, et);
-            SerijalizacijaEtikete.serijalizacijaEtikete();
-            this.Close();
+                Podaci.getInstance().Etikete.Insert(ind, et);
+                SerijalizacijaEtikete.serijalizacijaEtikete();
+                this.Close();
+            }
+            else
+                MessageBox.Show("Niste popunili sva polja!!!");
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

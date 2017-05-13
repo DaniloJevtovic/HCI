@@ -40,16 +40,22 @@ namespace Projekat.Tip
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Podaci.getInstance().Tipovi.RemoveAt(ind);
-            SerijalizacijaTipa.serijalizacijaTipa();
+            if (txtOznaka.Text != "" && txtIme.Text != "" && txtOpis.Text != "")  //Ikonica.Source != null
+            {
+                Podaci.getInstance().Tipovi.RemoveAt(ind);
+                SerijalizacijaTipa.serijalizacijaTipa();
 
-            ti.Oznaka = txtOznaka.Text;
-            ti.Ime = txtIme.Text;
-            ti.Opis = txtOpis.Text;
+                ti.Oznaka = txtOznaka.Text;
+                ti.Ime = txtIme.Text;
+                ti.Opis = txtOpis.Text;
 
-            Podaci.getInstance().Tipovi.Insert(ind, ti);
-            SerijalizacijaTipa.serijalizacijaTipa();
-            this.Close();
+                Podaci.getInstance().Tipovi.Insert(ind, ti);
+                SerijalizacijaTipa.serijalizacijaTipa();
+                this.Close();
+            }
+
+            else
+                MessageBox.Show("Niste popunili sva polja!!!");
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

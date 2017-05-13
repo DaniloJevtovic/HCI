@@ -23,14 +23,6 @@ namespace Projekat.Vrsta
         {
             InitializeComponent();
             VrsteTabela.ItemsSource = Podaci.getInstance().Vrste;
-
-            /*DataSet dataSet = new DataSet();
-
-            dataSet.ReadXml(file);
-            DataView dataView = new DataView(dataSet.Tables[0]);
-            VrsteTabela.ItemsSource = dataView;
-            VrsteTabela.UpdateLayout();
-            */
         }
 
         #region Click
@@ -75,7 +67,6 @@ namespace Projekat.Vrsta
                     }
                 }
             }
-
         }
 
         #endregion Click

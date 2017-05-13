@@ -56,7 +56,7 @@
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Margin="3,3,3,3" Grid.Column="0" Content="Sačuvaj" Click="btnPotvrdi_Click" Width="80" Height="23" />
+                <Button Margin="3,3,3,3" Grid.Column="0" Content="Sačuvaj" Click="btnPotvrdi_Click" Width="80" Height="23"/>
                 <Button Margin="3,3,5,3" Grid.Column="1" Content="Odustani" Click="btnOdustani_Click" Width="70" />
             </Grid>
         </StackPanel>

@@ -26,16 +26,27 @@ namespace Projekat.Vrsta
             DataSet dataSet = new DataSet();
 
             dataSet.ReadXml(file);
-            DataView dataView = new DataView(dataSet.Tables[0]);
-            EtiketeTabelaOdb.ItemsSource = dataView;
+            try //ukoliko nema etiketa
+            {
+                DataView dataView = new DataView(dataSet.Tables[0]);
+                EtiketeTabelaOdb.ItemsSource = dataView;
+            }
+            catch { }
         }
 
         private void Odaberi_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView drv = (DataRowView)EtiketeTabelaOdb.SelectedItem;
-            result = (drv["Oznaka"]).ToString();    //odabir etikete po oznaci, moze i po boji
-            //MessageBox.Show(result, "Odabrano");
-            this.Close(); 
+            try
+            {
+                DataRowView drv = (DataRowView)EtiketeTabelaOdb.SelectedItem;
+                result = (drv["Oznaka"]).ToString();    //odabir etikete po oznaci, moze i po boji
+                //MessageBox.Show(result, "Odabrano");
+                this.Close();
+            }
+            catch
+            {
+                this.Close();
+            }
         }
     }
 }

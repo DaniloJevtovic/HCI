@@ -16,6 +16,7 @@ using Projekat.Vrsta;
 using Projekat.Tip;
 using Projekat.Etiketa;
 using Projekat.Help;
+using System.Xml.Linq;
 
 namespace Projekat
 {
@@ -32,6 +33,8 @@ namespace Projekat
             SerijalizacijaEtikete.deserijalizacijaEtikete();
             SerijalizacijaTipa.deserijalizacijaTipa();
             SerijalizacijaVrste.deserijalizacijaVrste();
+
+            UgrVrLista.ItemsSource = Podaci.getInstance().Vrste;
         }
 
 
@@ -101,7 +104,12 @@ namespace Projekat
             //s.Show();
         }
      
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new Pomoc();
+            if (s.ShowDialog().Equals(true)) { }
+        }
+        
         #endregion Click
-
     }
 }

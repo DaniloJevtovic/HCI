@@ -31,18 +31,29 @@ namespace Projekat.Vrsta
             DataSet dataSet = new DataSet();
 
             dataSet.ReadXml(file);
-            DataView dataView = new DataView(dataSet.Tables[0]);
-            TipoviTabelaOdb.ItemsSource = dataView;
+            try  //ukoliko nema tipova
+            {
+                DataView dataView = new DataView(dataSet.Tables[0]);
+                TipoviTabelaOdb.ItemsSource = dataView;
+            }
+
+            catch { }
           
             //TipoviTabelaOdb.ItemsSource = Podaci.getInstance().Tipovi;
         }
 
         private void Odaberi_Click(object sender, RoutedEventArgs e)
         {
-            DataRowView drv = (DataRowView)TipoviTabelaOdb.SelectedItem;
-            result = (drv["Oznaka"]).ToString();    //odabir tipa po oznaci, moze i po imenu
-            //MessageBox.Show(result, "Odabrano");
-            this.Close();          
+            try
+            {
+                DataRowView drv = (DataRowView)TipoviTabelaOdb.SelectedItem;
+                result = (drv["Ime"]).ToString();    //odabir tipa po oznaci, moze i po imenu
+                this.Close();
+            }
+            catch
+            {
+                this.Close();
+            }
         }
     }
 }

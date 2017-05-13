@@ -48,30 +48,42 @@ namespace Projekat.Vrsta
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            Podaci.getInstance().Vrste.RemoveAt(ind);
-            SerijalizacijaVrste.serijalizacijaVrste();
+            if (txtOznaka.Text != "" && txtIme.Text != "" && txtOpis.Text != "" && _tipTxt.Text != "" &&
+                _etiketaTxt.Text != "" && txtStUgr.Text != null && turStat.Text != null) //Ikonica.Source != null
+            {
+                double n;
+                if (double.TryParse(godPrihod.Text, out n))
+                {
+                    Podaci.getInstance().Vrste.RemoveAt(ind);
+                    SerijalizacijaVrste.serijalizacijaVrste();
 
-            vr.Oznaka = txtOznaka.Text;
-            vr.Ime = txtIme.Text;
-            vr.Opis = txtOpis.Text;
-            vr.Tip = _tipTxt.Text;
-            vr.Etiketa = _etiketaTxt.Text;
-            vr.StUgr = txtStUgr.Text;
+                    vr.Oznaka = txtOznaka.Text;
+                    vr.Ime = txtIme.Text;
+                    vr.Opis = txtOpis.Text;
+                    vr.Tip = _tipTxt.Text;
+                    vr.Etiketa = _etiketaTxt.Text;
+                    vr.StUgr = txtStUgr.Text;
 
-            vr.OpZaLjude = (bool)opZaLjude.IsChecked;
-            vr.NaIucn = (bool)naIucn.IsChecked;
-            vr.ZiviUNasMjes = (bool)uNas.IsChecked;
+                    vr.OpZaLjude = (bool)opZaLjude.IsChecked;
+                    vr.NaIucn = (bool)naIucn.IsChecked;
+                    vr.ZiviUNasMjes = (bool)uNas.IsChecked;
 
-            vr.TurStatus = turStat.Text;
+                    vr.TurStatus = turStat.Text;
 
-            vr.GodPrihod = (float)Convert.ToDouble(godPrihod.Text);
-            //vr.GodPrihod = float.Parse(godPrihod.Text);
-            vr.DatOtkr = (DateTime)Convert.ToDateTime(Datum.Text);
+                    vr.GodPrihod = (float)Convert.ToDouble(godPrihod.Text);
+                    //vr.GodPrihod = float.Parse(godPrihod.Text);
+                    vr.DatOtkr = (DateTime)Convert.ToDateTime(Datum.Text);
 
-            Podaci.getInstance().Vrste.Insert(ind, vr);
-            SerijalizacijaVrste.serijalizacijaVrste();
+                    Podaci.getInstance().Vrste.Insert(ind, vr);
+                    SerijalizacijaVrste.serijalizacijaVrste();
 
-            this.Close();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Godisnji prihod mora biti broj!!!");
+            }
+            else
+                MessageBox.Show("Niste popunili sva polja!!!");
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

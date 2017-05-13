@@ -1,23 +1,23 @@
 <?xml version="1.0"?>
 <ArrayOfEtiketaA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EtiketaA>
-    <Oznaka>123</Oznaka>
-    <Boja>lubičasta</Boja>
-    <Opis>3323</Opis>
+    <Oznaka>SL</Oznaka>
+    <Boja>siva</Boja>
+    <Opis>slon</Opis>
   </EtiketaA>
   <EtiketaA>
-    <Oznaka>431</Oznaka>
-    <Boja>zelena</Boja>
-    <Opis>123</Opis>
+    <Oznaka>TI</Oznaka>
+    <Boja>narandzasta</Boja>
+    <Opis>tigar</Opis>
   </EtiketaA>
   <EtiketaA>
-    <Oznaka>5555</Oznaka>
+    <Oznaka>KO</Oznaka>
     <Boja>bijela</Boja>
-    <Opis>dfsdfsdfs</Opis>
+    <Opis>konj</Opis>
   </EtiketaA>
   <EtiketaA>
-    <Oznaka>ddddffffaa</Oznaka>
-    <Boja>plava</Boja>
-    <Opis>dddd</Opis>
+    <Oznaka>SI</Oznaka>
+    <Boja>bijela</Boja>
+    <Opis>sisar</Opis>
   </EtiketaA>
 </ArrayOfEtiketaA>

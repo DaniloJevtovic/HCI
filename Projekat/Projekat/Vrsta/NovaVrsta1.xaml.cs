@@ -56,11 +56,23 @@ namespace Projekat.Vrsta
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            SerijalizacijaVrste.deserijalizacijaVrste();
-            Podaci.getInstance().Vrste.Add(vm.Vrsta);
-            SerijalizacijaVrste.serijalizacijaVrste();
-            this.dg.ItemsSource = Podaci.getInstance().Vrste;
-            this.Close();
+            if (txtOznaka.Text != "" && txtIme.Text != "" && txtOpis.Text != "" && _tipTxt.Text != "" &&
+                _etiketaTxt.Text != "" && txtStUgr.Text != null && Ikonica.Source != null && turStat.Text != null)
+            {
+                double n;
+                if (double.TryParse(godPrihod.Text, out n)) //NAPISI NESTO BOLJE!!!
+                {
+                    SerijalizacijaVrste.deserijalizacijaVrste();
+                    Podaci.getInstance().Vrste.Add(vm.Vrsta);
+                    SerijalizacijaVrste.serijalizacijaVrste();
+                    this.dg.ItemsSource = Podaci.getInstance().Vrste;
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Godisnji prihod mora biti broj!!!");
+            }
+            else
+                MessageBox.Show("Niste popunili sva polja!!!");
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

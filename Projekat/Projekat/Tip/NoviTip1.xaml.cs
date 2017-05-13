@@ -48,11 +48,17 @@ namespace Projekat.Tip
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            SerijalizacijaTipa.deserijalizacijaTipa();
-            Podaci.getInstance().Tipovi.Add(vm.Tip);
-            SerijalizacijaTipa.serijalizacijaTipa();
-            this.dg.ItemsSource = Podaci.getInstance().Tipovi;  //!pazi
-            this.Close();
+            if(txtOznaka.Text  != "" && txtIme.Text != "" && txtOpis.Text !="" && Ikonica.Source != null)
+            {
+                SerijalizacijaTipa.deserijalizacijaTipa();
+                Podaci.getInstance().Tipovi.Add(vm.Tip);
+                SerijalizacijaTipa.serijalizacijaTipa();
+                this.dg.ItemsSource = Podaci.getInstance().Tipovi;  //!pazi
+                this.Close();
+            }
+
+            else
+                MessageBox.Show("Niste popunili sva polja!!!");
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)

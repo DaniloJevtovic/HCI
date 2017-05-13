@@ -4,39 +4,39 @@
         Icon="/Projekat;component/Images/logo.png"
         Title="Pregled vrsta" Name="UI"  Height="620" Width="1000" WindowStartupLocation="CenterScreen">
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="50*" />
-            </Grid.RowDefinitions>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50*" />
+        </Grid.RowDefinitions>
 
-            <Grid Grid.Row="0">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Label Content="Pretraga:"/>
-                <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
-                <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3" ></Button>
-                <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3" ></Button>
-                <Button Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
-            </Grid>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Label Content="Pretraga:"/>
+            <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
+            <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3" ></Button>
+            <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3" ></Button>
+            <Button Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
+        </Grid>
 
-            <DataGrid x:Name="VrsteTabela" ItemsSource="{Binding Vrste}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" >
+        <DataGrid x:Name="VrsteTabela" ItemsSource="{Binding Vrste}" Grid.Row="1" IsReadOnly="True" AutoGenerateColumns="False" >
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Black"/>
             </DataGrid.Resources>
             <DataGrid.Columns>
-                    <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka}" Width="4*" />
-                    <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="4*" />
-                    <DataGridTextColumn Header="Opis" Binding="{Binding Opis}" Width="4*"/>
-                    <DataGridTextColumn Header="Tip" Binding="{Binding Tip}" Width="4*"/>
-                    <DataGridTextColumn Header="Etiketa" Binding="{Binding Etiketa}" Width="4*"/>
-                    <DataGridTextColumn Header="Status &#10;ugroženosti" Binding="{Binding StUgr}" Width="6*"/>
-                    
+                <DataGridTextColumn Header="Oznaka" Binding="{Binding Oznaka}" Width="4*" />
+                <DataGridTextColumn Header="Ime" Binding="{Binding Ime}" Width="4*" />
+                <DataGridTextColumn Header="Opis" Binding="{Binding Opis}" Width="4*"/>
+                <DataGridTextColumn Header="Tip" Binding="{Binding Tip}" Width="4*"/>
+                <DataGridTextColumn Header="Etiketa" Binding="{Binding Etiketa}" Width="4*"/>
+                <DataGridTextColumn Header="Status &#10;ugroženosti" Binding="{Binding StUgr}" Width="6*"/>
+
                 <!--ikonica-->
                 <DataGridTemplateColumn Header="Ikonica" MinWidth="70" MaxWidth="70">
                     <DataGridTemplateColumn.CellTemplate>
@@ -45,15 +45,31 @@
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
+                
                 <DataGridCheckBoxColumn Header="Opasna za&#10;ljude?" Binding="{Binding OpZaLjude}" Width="4.5*"/>
-                    <DataGridCheckBoxColumn Header="Na IUCN &#10;listi" Binding="{Binding NaIucn}" Width="4*"/>
-                    <DataGridCheckBoxColumn Header="Živi u naseljenom &#10;regionu?" Binding="{Binding ZiviUNasMjes}" Width="6.5*"/>
+                <DataGridCheckBoxColumn Header="Na IUCN &#10;listi" Binding="{Binding NaIucn}" Width="4*"/>
+                <DataGridCheckBoxColumn Header="Živi u naseljenom &#10;regionu?" Binding="{Binding ZiviUNasMjes}" Width="6.5*"/>
 
-                    <DataGridTextColumn Header="Turistički &#10;status" Binding="{Binding TurStatus}" Width="4*"/>
-                    <DataGridTextColumn Header="Godišnji prihod&#10;od turizma" Binding="{Binding GodPrihod}" Width="6*"/>
-                    <DataGridTextColumn Header="Datum &#10;otkrivanja" Binding="{Binding DatOtkr, StringFormat=\{0:dd.MM.yyyy\}}" Width="6*"/>
-                </DataGrid.Columns>
-            </DataGrid>
-        </Grid>
+                <DataGridTextColumn Header="Turistički &#10;status" Binding="{Binding TurStatus}" Width="4*"/>
+
+                <DataGridTextColumn Header="Godišnji prihod&#10;od turizma ($)" Binding="{Binding GodPrihod}" Width="6*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+                <DataGridTextColumn Header="Datum &#10;otkrivanja" Binding="{Binding DatOtkr, StringFormat=\{0:dd.MM.yyyy\}}" Width="6*">
+                    <DataGridTextColumn.ElementStyle>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="HorizontalAlignment" Value="Center" />
+                        </Style>
+                    </DataGridTextColumn.ElementStyle>
+                </DataGridTextColumn>
+                
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
 
 </Window>

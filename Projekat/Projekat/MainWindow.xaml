@@ -7,6 +7,7 @@
         Icon="/Projekat;component/Images/logo.png"
         WindowState="Maximized"
         WindowStartupLocation="CenterScreen">
+    
     <DockPanel>
         <!--menu-->
         <Menu DockPanel.Dock="Top" Background="White">
@@ -54,9 +55,9 @@
                 <Button Click="PregledEtiketa_Click">Pregled etiketa</Button>
                 <Separator Width="10"></Separator>
                 
-                <Button>Pomoć</Button>
+                <Button Click="Button_Click">Pomoć</Button>
                 <Separator Width="1"></Separator>
-                <Button>DEMO</Button>
+                <Button Click="Demo_Click">DEMO</Button>
             </ToolBar>
         </ToolBarPanel>
         
@@ -67,24 +68,31 @@
                 <ColumnDefinition Width="374*" />
             </Grid.ColumnDefinitions>
             
+            
             <!--lijeva strana-->
-            <Canvas Grid.Column="0">
+            <Canvas Grid.Column="0" Cursor="Hand">
                 <Canvas.Background>
                     <SolidColorBrush Color="White"></SolidColorBrush>
                 </Canvas.Background>
 
-                <ListBox>
-                    <Label HorizontalContentAlignment="Center" Content="Ugrožene vrste" Width="190"></Label>
+                <ListBox Name="UgrVrLista" Width="200">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Oznaka}" />
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                    <!--<Label HorizontalContentAlignment="Center" Content="Ugrožene vrste" Width="190"></Label> -->
                 </ListBox>
             </Canvas>
-            
+
+
             <!--desna strana-->
             <Canvas Grid.Column="1">
                 <Canvas.Background>
                     <ImageBrush ImageSource="map.gif" ></ImageBrush>
                 </Canvas.Background>
             </Canvas>
-        </Grid>
+        </Grid>        
         
     </DockPanel>
    

@@ -36,6 +36,7 @@
             <ComboBoxItem Content="smedja"></ComboBoxItem>
             <ComboBoxItem Content="lubičasta"></ComboBoxItem>
             <ComboBoxItem Content="narandzasta"></ComboBoxItem>
+            <ComboBoxItem Content="siva"></ComboBoxItem>
         </ComboBox>
         <!--korisnik daltonista, nema bas smisla stavljati paletu sa bojama-->
         <!--<TextBox  Name="txtBoja" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3"/> -->
