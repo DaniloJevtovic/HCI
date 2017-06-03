@@ -1,27 +1,15 @@
 <?xml version="1.0"?>
 <ArrayOfTipP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <TipP>
-    <Oznaka>SI</Oznaka>
-    <Ime>sisar</Ime>
-    <Ikonica>C:\Users\Lemur\Desktop\Afrički-slon.jpg</Ikonica>
-    <Opis>sisar ...</Opis>
+    <Oznaka>tip1</Oznaka>
+    <Ime>Ime tipa</Ime>
+    <Ikonica>C:\Users\Lemur\Pictures\konj.jpg</Ikonica>
+    <Opis>Ovo je neki opis tipa</Opis>
   </TipP>
   <TipP>
-    <Oznaka>MA</Oznaka>
-    <Ime>macka</Ime>
-    <Ikonica>C:\Users\Lemur\Desktop\tigar.jpg</Ikonica>
-    <Opis>macka ...</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>KO</Oznaka>
-    <Ime>konj</Ime>
-    <Ikonica>C:\Users\Lemur\Desktop\324278_konji-foto-namibian-com_kf.jpg</Ikonica>
-    <Opis>konj ...</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>PT</Oznaka>
-    <Ime>Ptica</Ime>
-    <Ikonica>C:\Users\Lemur\Desktop\361121479.jpg</Ikonica>
-    <Opis>ptice ...</Opis>
+    <Oznaka>TIP2</Oznaka>
+    <Ime>Ime tipa2</Ime>
+    <Ikonica>C:\Users\Lemur\Pictures\Lemur.jpg</Ikonica>
+    <Opis>opis tipa</Opis>
   </TipP>
 </ArrayOfTipP>

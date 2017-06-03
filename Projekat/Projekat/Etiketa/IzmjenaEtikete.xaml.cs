@@ -15,19 +15,39 @@ namespace Projekat.Etiketa
 {
     public partial class IzmjenaEtikete : Window
     {
-        EtiketaA et;
-        int ind;
+        //EtiketaA et;
+        //int ind;
+
+        private ViewModel vm;
+
+        public class ViewModel
+        {
+            public EtiketaA Etiketa { get; set; }
+            public string stEtiketa { get; set; }
+        }
 
         public IzmjenaEtikete(EtiketaA etiketa, int index)
         {
             InitializeComponent();
 
+            //et = new EtiketaA();
+            //et = etiketa;
+
+            vm = new ViewModel();
+            vm.Etiketa = etiketa;   //preuzimam selektovanu etiketu
+
+            vm.stEtiketa = etiketa.Oznaka;
+
+            this.DataContext = vm;
+
+            /*
             et = etiketa;
             ind = index;
-
+            txtOznaka.Text = vm.Etiketa.Oznaka;
             this.txtOznaka.Text = etiketa.Oznaka;
             this.txtBoja.Text = etiketa.Boja;
             this.txtOpis.Text = etiketa.Opis;
+             * */
         }
 
         public IzmjenaEtikete()
@@ -37,6 +57,25 @@ namespace Projekat.Etiketa
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
+            List<EtiketaA> etikete = new List<EtiketaA>();
+
+            foreach (EtiketaA etiketa in Podaci.getInstance().Etikete)
+            {
+                if (etiketa.Oznaka == vm.stEtiketa)
+                {
+                    etikete.Add(vm.Etiketa);
+                }
+                else
+                {
+                    etikete.Add(etiketa);
+                }
+            }
+
+            Podaci.getInstance().Etikete = etikete;
+            SerijalizacijaEtikete.serijalizacijaEtikete();
+            this.Close();
+
+            /*
             if (txtOznaka.Text != "" && txtOpis.Text != "" && txtBoja.Text != null)
             {
                 Podaci.getInstance().Etikete.RemoveAt(ind);
@@ -51,7 +90,9 @@ namespace Projekat.Etiketa
                 this.Close();
             }
             else
-                MessageBox.Show("Niste popunili sva polja!!!");
+                MessageBox.Show("Niste popunili sva polja!");
+             * 
+             * */
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
@@ -61,7 +102,8 @@ namespace Projekat.Etiketa
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
-
+            var s = new PomocEtiketa("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/Help/etiketa.htm");
+            if (s.ShowDialog().Equals(true)) { }
         }
     }
 }

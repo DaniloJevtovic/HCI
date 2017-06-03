@@ -1,15 +1,17 @@
 ﻿<Window x:Class="Projekat.Tip.IzmjenaTipa"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Icon="/Projekat;component/Images/logo.png"
-        Title="Izmjena tipa" Height="312" Width="336" MinHeight="312" MinWidth="336" WindowStartupLocation="CenterScreen">
+        Icon="/Projekat;component/Images/edit.png"
+        xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
+        Title="Izmjena tipa" Height="411" Width="412" MinHeight="411" MinWidth="412" WindowStartupLocation="CenterScreen"
+        xmlns:validation="clr-namespace:Projekat.Tip">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="Auto" />
-            <RowDefinition Height="64" />
+            <RowDefinition Height="80" />
             <RowDefinition Height="Auto" />
             <RowDefinition Height="86*" />
         </Grid.RowDefinitions>
@@ -19,46 +21,102 @@
             <ColumnDefinition Width="347*" />
         </Grid.ColumnDefinitions>
 
-        <WrapPanel Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right">
-            <Button Content="Pomoć" Margin="3,3,3,3" Click="btnPomoc_Click" Height="23" Width="103" />
+        <WrapPanel  Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,3,27,20">
+            <Button Content="Pomoć" Margin="3,3,0,3" MaxWidth="90" MinWidth="90" Padding="2,2,2,2" Click="btnPomoc_Click"  />
         </WrapPanel>
 
 
-        <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1"  HorizontalAlignment="Center"/>
-        <TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" />
+        <Label Content="Oznaka:" Grid.Column="0" Grid.Row="1" HorizontalAlignment="Center" Margin="20,0,0,0"/>
+        <!--<TextBox  Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="3,3,3,3" Text="{Binding Path=Tip.Oznaka, UpdateSourceTrigger=PropertyChanged}"/>  -->
+        <xctk:WatermarkTextBox Name="txtOznaka" Grid.Column="1" Grid.Row="1" Margin="20,3,27,20"  Watermark="Unesite oznaku" >
+            <xctk:WatermarkTextBox.Text>
+                <Binding Path="Tip.Oznaka" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validation:ValidacijaTip ValidationStep="RawProposedValue" />
+                        <validation:ValidacijaTip2 ValidationStep="RawProposedValue" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </xctk:WatermarkTextBox.Text>
 
-        <Label Content="Ime:" Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Center"/>
-        <TextBox  Name="txtIme" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3"/>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <TextBlock Text="{Binding [0].ErrorContent}"  Margin="0,25,0,0" Foreground="White" Background="Black" />
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </xctk:WatermarkTextBox>
 
-        <Label Content="Ikonica:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center"/>
-        <Grid Grid.Column="1" Grid.Row="3" Margin="0,3,3,3">
+        <Label Content="Ime:" Grid.Column="0" Grid.Row="2"  HorizontalAlignment="Center" Margin="20,0,0,0"/>
+        <!--<TextBox  Name="txtIme" Grid.Column="1" Grid.Row="2" Margin="3,3,3,3" Text="{Binding Path=Tip.Ime, UpdateSourceTrigger=PropertyChanged}"/> -->
+        <xctk:WatermarkTextBox Name="txtIme" Grid.Column="1" Grid.Row="2" Margin="20,3,27,20" Watermark="Unesite ime" >
+            <xctk:WatermarkTextBox.Text>
+                <Binding Path="Tip.Ime" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validation:ValidacijaTip3 ValidationStep="RawProposedValue" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </xctk:WatermarkTextBox.Text>
+
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <TextBlock Text="{Binding [0].ErrorContent}"  Margin="0,25,0,0" Foreground="White" Background="Black" />
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </xctk:WatermarkTextBox>
+
+        <Label Content="Ikonica:" Grid.Column="0" Grid.Row="3" HorizontalAlignment="Center" Margin="20,0,0,0"/>
+        <Grid Grid.Column="1" Grid.Row="3" Margin="20,3,27,20">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="85" />
                 <ColumnDefinition Width="168" />
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Border BorderThickness="1" BorderBrush="Black" Height="56" Margin="3,5,10,5">
-                <Image Name="Ikonica" Height="49" Width="62" Stretch="Fill">
+                <Image Name="Ikonica" Height="49" Width="62" Stretch="Fill" >
                     <Image.Source>
-                        <Binding Path="Slika"></Binding>
+                        <Binding Path="Tip.Ikonica"></Binding>
                     </Image.Source>
                 </Image>
             </Border>
             <Button Content="Dodaj ikonicu" Click="btnIkonica_Click" Margin="1,5,65,39" Height="22" Width="93" Grid.Column="1" />
         </Grid>
 
-        <Label Content="Opis:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" />
-        <TextBox Name="txtOpis" Grid.Column="1" Grid.Row="4" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3,3,3,3" />
+        <Label Content="Opis:" Grid.Column="0" Grid.Row="4" HorizontalAlignment="Center" Margin="20,0,0,0"/>
+        <!--<TextBox Name="txtOpis" Grid.Column="1" Grid.Row="4" AcceptsReturn="True" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="3,3,3,3" Text="{Binding Path=Tip.Opis, UpdateSourceTrigger=PropertyChanged}" /> -->
+        <xctk:WatermarkTextBox Name="txtOpis" Grid.Column="1" Grid.Row="4" TextWrapping="Wrap" ScrollViewer.VerticalScrollBarVisibility="Auto" Margin="20,3,27,30" Watermark="Unesite opis . . .">
+            <xctk:WatermarkTextBox.Text>
+                <Binding Path="Tip.Opis" UpdateSourceTrigger="PropertyChanged">
+                    <Binding.ValidationRules>
+                        <validation:ValidacijaTip4 ValidationStep="RawProposedValue" />
+                    </Binding.ValidationRules>
+                </Binding>
+            </xctk:WatermarkTextBox.Text>
 
-        <StackPanel Grid.Column="1" Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,10,0,10" >
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
-                    <ColumnDefinition />
-                </Grid.ColumnDefinitions>
-                <Button Margin="3,3,3,3" Grid.Column="0" Content="Sačuvaj" Click="btnPotvrdi_Click" Width="80" Height="23" />
-                <Button Margin="3,3,5,3" Grid.Column="1" Content="Odustani" Click="btnOdustani_Click" Width="70" />
-            </Grid>
-        </StackPanel>
+            <Validation.ErrorTemplate>
+                <ControlTemplate>
+                    <TextBlock Text="{Binding [0].ErrorContent}"  Margin="0,48,0,0" Foreground="White" Background="Black" />
+                </ControlTemplate>
+            </Validation.ErrorTemplate>
+        </xctk:WatermarkTextBox>
+
+        <WrapPanel Grid.Row="5" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,3,27,0" Width="190">
+            <Button Margin="3,3,3,3" Content="Sačuvaj" Click="btnPotvrdi_Click" Padding="3"  Width="90" >
+                <Button.Style>
+                    <Style TargetType="Button">
+                        <Setter Property="IsEnabled" Value="False"/>
+                        <Style.Triggers>
+                            <MultiDataTrigger>
+                                <MultiDataTrigger.Conditions>
+                                    <Condition Binding="{Binding Path=(Validation.HasError), ElementName=txtOznaka}" Value="False"/>
+                                    <Condition Binding="{Binding Path=(Validation.HasError), ElementName=txtIme}" Value="False"/>
+                                    <Condition Binding="{Binding Path=(Validation.HasError), ElementName=txtOpis}" Value="False"/>
+                                </MultiDataTrigger.Conditions>
+                                <Setter Property="IsEnabled" Value="True"/>
+                            </MultiDataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+            </Button>
+            <Button Margin="3,3,0,3" Content="Odustani" Click="btnOdustani_Click" Padding="3" Width="90" />
+        </WrapPanel>
     </Grid>
 </Window>

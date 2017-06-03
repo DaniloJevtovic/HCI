@@ -20,37 +20,58 @@ namespace Projekat.Etiketa
 {
     public partial class PregledEtiketa : Window
     {
-        //private string file = "etikete.xml";
-        //public string result = "";
-        private string filterString;
-
         public PregledEtiketa()
         {
             InitializeComponent();
-
             EtiketeTable.ItemsSource = Podaci.getInstance().Etikete;
-            
-            /*
-            DataSet dataSet = new DataSet();
-            if (File.Exists(file) == false)
-                SerijalizacijaEtikete.serijalizacijaEtikete();
-            
-            dataSet.ReadXml(file);
-            DataView dataView = new DataView(dataSet.Tables[0]);
-            EtiketeTable.ItemsSource = dataView;
-            EtiketeTable.UpdateLayout();
+        }
 
-            //this.DataContext = this;
-            */
+        //filtriranje po oznaci
+        private void txtOznaka_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox t = (TextBox)sender;
+            string filter = t.Text;
+            ICollectionView cv = CollectionViewSource.GetDefaultView(EtiketeTable.ItemsSource);
+            
+            if (filter == "")
+                cv.Filter = null;
+            
+            else
+            {
+                cv.Filter = o =>
+                {
+                    EtiketaA et = o as EtiketaA;
+                    return (et.Oznaka.ToUpper().StartsWith(filter.ToUpper()));
+                };
+            }
+        }
+
+        //filtriranje po Boji
+        private void txtBoja_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            TextBox t = (TextBox)sender;
+            string filter = t.Text;
+            ICollectionView cv = CollectionViewSource.GetDefaultView(EtiketeTable.ItemsSource);
+            
+            if (filter == "")
+                cv.Filter = null;
+            
+            else
+            {
+                cv.Filter = o =>
+                {
+                    EtiketaA et = o as EtiketaA;
+                    return (et.Boja.ToUpper().StartsWith(filter.ToUpper()));
+                };
+            }
         }
 
         #region Click
 
-        private void btnDodaj_Click(object sender, RoutedEventArgs e)
+        private void btnDodaj_Click(object sender, RoutedEventArgs e)   //konstruktor iz pregleda
         {
             var s = new NovaEtiketa1(EtiketeTable);
             if (s.ShowDialog().Equals(true)) { }
-            //s.Show();
         }
 
         private void btnIzmjeni_Click(object sender, RoutedEventArgs e)
@@ -63,6 +84,9 @@ namespace Projekat.Etiketa
                 var s = new IzmjenaEtikete(et, ind);
                 if (s.ShowDialog().Equals(true)) { }
                 EtiketeTable.Items.Refresh();
+
+                SerijalizacijaEtikete.deserijalizacijaEtikete();
+                EtiketeTable.ItemsSource = Podaci.getInstance().Etikete;
             }
 
             else
@@ -89,52 +113,25 @@ namespace Projekat.Etiketa
             }
         }
 
+        private void btnPomoc_Click(object sender, RoutedEventArgs e)
+        {
+            var s = new PomocEtiketa("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/Help/pregledEtiketa.htm");
+            if (s.ShowDialog().Equals(true)) { }
+        }
         #endregion Click
 
-        #region Search
 
-        public string FilterString
+
+        private void txtOznaka_LostFocus(object sender, RoutedEventArgs e)
         {
-            get { return filterString; }
-            set
-            {
-                filterString = value;
-                NotifyPropertyChanged("FilterString");
-            }
+            txtOznaka.Text = "";    //kad izgubi fokus brise se tekst
         }
 
-        private void FilterCollection()
+        private void txtBoja_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (EtiketeTable != null)
-            {
-                EtiketeTable.Items.Refresh();
-            }
+            txtBoja.Text = "";      //kad izbrise fokus brise tekst
         }
-
-        public bool Filter(object obj)
-        {
-            var data = obj as EtiketaA;
-            if (data != null)
-            {
-                if(!string.IsNullOrEmpty(filterString))
-                {
-                    return data.Oznaka.Contains(filterString) || data.Boja.Contains(filterString);  //po oznaci i boji
-                }
-            }
-
-            return false;
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void NotifyPropertyChanged(string property)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
-        }
-
-        #endregion Search
+ 
     }
 
 }

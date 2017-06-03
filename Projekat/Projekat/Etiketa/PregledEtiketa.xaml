@@ -1,7 +1,8 @@
 ﻿<Window x:Class="Projekat.Etiketa.PregledEtiketa"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Icon="/Projekat;component/Images/logo.png"
+        Icon="/Projekat;component/Images/view.png"
+        xmlns:xctk="clr-namespace:Xceed.Wpf.Toolkit;assembly=Xceed.Wpf.Toolkit"
         Title="Pregled etiketa" Height="562" Width="812" Name="UI" WindowStartupLocation="CenterScreen">
     <Grid>
         <Grid.RowDefinitions>
@@ -11,21 +12,42 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition />    <!--pretraga-->
+                <ColumnDefinition />    <!--filtriranje-->
+                <ColumnDefinition />    <!--dugmad-->
             </Grid.ColumnDefinitions>
+            
+            <!--pretraga-->
+            <Grid Grid.Column="0">
+                <Label Content="Pretraga po oznaci:"/>
+                <!--<TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,3,6,3" /> -->
+                <xctk:WatermarkTextBox x:Name="txtOznaka" TextChanged="txtOznaka_TextChanged" Margin="111,3,6,3" Watermark="Unesite oznaku etikete" LostFocus="txtOznaka_LostFocus" />
+                
+            </Grid>
 
-            <Label Content="Pretraga:"/>
-            <TextBox Text="{Binding FilterString, UpdateSourceTrigger=PropertyChanged}" Grid.ColumnSpan="2" Margin="56,4,6,3" />
-            <Button Content="Dodaj" Grid.Column="2" Click="btnDodaj_Click" Margin="3,3,3,3"></Button>
-            <Button Content="Izmjeni" Grid.Column="3" Click="btnIzmjeni_Click" Margin="3,3,3,3"></Button>
-            <Button x:Name="btnObrisi" Content="Obriši" Grid.Column="4" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
+            <!--filtriranje-->
+            <Grid Grid.Column="1">
+                <Label Content="Pretraga po boji:"></Label>
+                <xctk:WatermarkTextBox x:Name="txtBoja" TextChanged="txtBoja_TextChanged" Margin="100,3,6,3" Watermark="Unesite boju etikete" LostFocus="txtBoja_LostFocus"/>
+            </Grid>
+            
+            <!--dugmad-->
+            <Grid Grid.Column="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Button Content="Dodaj" Grid.Column="0" Click="btnDodaj_Click" Margin="3,3,3,3"></Button>
+                <Button Content="Izmjeni" Grid.Column="1" Click="btnIzmjeni_Click" Margin="3,3,3,3"></Button>
+                <Button x:Name="btnObrisi" Content="Obriši" Grid.Column="2" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
+                <Button Content="Pomoć" Grid.Column="3" Click="btnPomoc_Click" Margin="3,3,3,3"></Button>
+            </Grid>
+            
         </Grid>
 
-        <DataGrid  x:Name="EtiketeTable" ItemsSource="{Binding Path=Etikete, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+        <DataGrid  x:Name="EtiketeTable" ItemsSource="{Binding Path=Etikete, UpdateSourceTrigger=PropertyChanged}" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" SelectionMode="Single">
             <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Black"/>
             </DataGrid.Resources>
@@ -34,6 +56,35 @@
                 <DataGridTextColumn Header="Boja etikete" Width="*" Binding="{Binding Boja}"/>
                 <DataGridTextColumn Header="Opis etikete" Width="*" Binding="{Binding Opis}"/>
             </DataGrid.Columns>
+
+            <DataGrid.RowDetailsTemplate>
+                <DataTemplate>
+                    <DockPanel Background="GhostWhite">
+                        <Grid Margin="0,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Text="Oznaka: " FontWeight="Bold" />
+                            <TextBlock Text="{Binding Oznaka}" Grid.Column="1" Margin="5,0,0,0"/>
+                            
+                            <TextBlock Text="Boja: " FontWeight="Bold" Grid.Row="1" />
+                            <TextBlock Text="{Binding Boja}" Grid.Column="1" Grid.Row="1" Margin="5,0,0,0"/>
+                            
+                            <TextBlock Text="Opis: " FontWeight="Bold" Grid.Row="2" />
+                            <TextBlock Text="{Binding Opis, StringFormat=d}" Grid.Column="1" Grid.Row="2" Margin="5,0,0,0"/>
+                        </Grid>
+                    </DockPanel>
+                </DataTemplate>
+            </DataGrid.RowDetailsTemplate>
+
+
         </DataGrid>
 
     </Grid>

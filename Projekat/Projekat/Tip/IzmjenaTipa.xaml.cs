@@ -16,21 +16,38 @@ namespace Projekat.Tip
 {
     public partial class IzmjenaTipa : Window
     {
-        TipP ti;
-        int ind;
+        //TipP ti;
+        //int ind;
+
+        private ViewModel vm;
+
+        public class ViewModel
+        {
+            public TipP Tip { get; set; }
+            public string stTip { get; set; }
+        }
 
         public IzmjenaTipa(TipP tip, int index)
         {
             InitializeComponent();
             
-            ti = tip;
-            ind = index;
+            //ti = tip;
+            //ind = index;
 
+            vm = new ViewModel();
+            vm.Tip = tip;   //preuzimam proslijedjeni tip tj selektovani
+
+            vm.stTip = tip.Oznaka;
+
+            this.DataContext = vm;
+
+            /*
+            
             this.txtOznaka.Text = tip.Oznaka;
             this.txtIme.Text = tip.Ime;
-            //
+            this.Ikonica.Source = new BitmapImage(new Uri(tip.Ikonica.ToString()));
             this.txtOpis.Text = tip.Opis;
-
+            **/
         }
 
         public IzmjenaTipa()
@@ -40,6 +57,25 @@ namespace Projekat.Tip
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
+            List<TipP> tipovi = new List<TipP>();
+
+            foreach (TipP tip in Podaci.getInstance().Tipovi)
+            {
+                if (tip.Oznaka == vm.stTip)
+                {
+                    tipovi.Add(vm.Tip);
+                }
+                else
+                {
+                    tipovi.Add(tip);
+                }
+            }
+
+            Podaci.getInstance().Tipovi = tipovi;
+            SerijalizacijaTipa.serijalizacijaTipa();
+            this.Close();
+
+            /*
             if (txtOznaka.Text != "" && txtIme.Text != "" && txtOpis.Text != "")  //Ikonica.Source != null
             {
                 Podaci.getInstance().Tipovi.RemoveAt(ind);
@@ -56,6 +92,7 @@ namespace Projekat.Tip
 
             else
                 MessageBox.Show("Niste popunili sva polja!!!");
+             * */
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
@@ -75,7 +112,7 @@ namespace Projekat.Tip
             {
                 Ikonica.Source = new BitmapImage(new Uri(fileDialog.FileName));
                 //vm.Tip.Ikonica = fileDialog.FileName;
-                ti.Ikonica = fileDialog.FileName;
+                //ti.Ikonica = fileDialog.FileName;
             }
         }
 

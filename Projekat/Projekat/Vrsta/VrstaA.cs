@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.ComponentModel;
 
+using Projekat.Etiketa;
+
 namespace Projekat.Vrsta
 {
     [Serializable]
@@ -13,7 +15,7 @@ namespace Projekat.Vrsta
         private string _ime;
         private string _opis;
         private string _tip;
-        private string _etiketa;
+        private List<EtiketaA> _etikete;
         private string _stUgr;
         private string _ikonica;
         private bool _opZaLjude;
@@ -22,6 +24,10 @@ namespace Projekat.Vrsta
         private string _turStatus;
         private float _godPrihod;
         private DateTime _datOtkr;
+
+        //x i y koordinate vrste
+        private int x;
+        private int y;
 
         public string Oznaka
         {
@@ -87,18 +93,18 @@ namespace Projekat.Vrsta
             }
         }
 
-        public string Etiketa
+        public List<EtiketaA> Etikete
         {
             get
             {
-                return _etiketa;
+                return _etikete;
             }
             set
             {
-                if (value != _etiketa)
+                if (value != _etikete)
                 {
-                    _etiketa = value;
-                    OnPropertyChanged("Etiketa");
+                    _etikete = value;
+                    OnPropertyChanged("Etikete");
                 }
             }
         }
@@ -231,6 +237,39 @@ namespace Projekat.Vrsta
             }
         }
 
+        public int X
+        {
+            get
+            {
+                return x;
+            }
+
+            set
+            {
+                if (value != x)
+                {
+                    x = value;
+                    OnPropertyChanged("X");
+                }
+            }
+        }
+
+        public int Y
+        {
+            get
+            {
+                return y;
+            }
+
+            set
+            {
+                if (value != y)
+                {
+                    y = value;
+                    OnPropertyChanged("Y");
+                }
+            }
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged(string name)
@@ -240,5 +279,7 @@ namespace Projekat.Vrsta
                 PropertyChanged(this, new PropertyChangedEventArgs(name));
             }
         }
+
+
     }
 }

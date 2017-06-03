@@ -93,5 +93,18 @@ namespace Projekat
             }
         }
 
+        public static void ChangeDroppedVrsta(VrstaA vrsta)
+        {
+            foreach (VrstaA v in instance.Vrste)
+            {
+                if (v.Oznaka == vrsta.Oznaka)
+                {
+                    v.X = vrsta.X;
+                    v.Y = vrsta.Y;
+                    break;
+                }
+            }
+            SerijalizacijaVrste.serijalizacijaVrste();
+        }   //cuvanje novih kordinata vrste pri pomjeranju ikonice na kanvasu
     }
 }

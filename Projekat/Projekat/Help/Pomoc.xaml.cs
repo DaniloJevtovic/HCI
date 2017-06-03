@@ -21,6 +21,36 @@ namespace Projekat.Help
         public Pomoc()
         {
             InitializeComponent();
+
+            web.Navigate("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/Help/index.htm");
         }
+
+        #region BACK
+
+        private void BrowseBack_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = ((web != null) && (web.CanGoBack));
+        }
+
+        private void BrowseBack_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            web.GoBack();
+        }
+
+        #endregion BACK
+
+        #region FORWARD
+        private void BrowseForward_CanExecute(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = ((web != null) && (web.CanGoForward));
+        }
+
+        private void BrowseForward_Executed(object sender, ExecutedRoutedEventArgs e)
+        {
+            web.GoForward();
+        }
+        #endregion FORWARD
+
+
     }
 }

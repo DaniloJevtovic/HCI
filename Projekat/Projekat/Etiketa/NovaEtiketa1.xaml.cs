@@ -28,7 +28,7 @@ namespace Projekat.Etiketa
             public EtiketaA Etiketa { get; set; }
         }
 
-        public NovaEtiketa1(DataGrid d) //konstruktor kada dodajes iz pregleda kako bi osvjezio pregled
+        public NovaEtiketa1(DataGrid d)     //konstruktor za dodavanje nove etikete iz tabele, kako bi osvjezio prikaz
         {
             InitializeComponent();
 
@@ -46,28 +46,31 @@ namespace Projekat.Etiketa
             vm = new ViewModel();
             vm.Etiketa = new EtiketaA();
             this.DataContext = vm;
-            //vm.Etiketa.Oznaka = txtOpis.Text;
-            //vm.Etiketa.Boja = cmBoja.Text;
-            //vm.Etiketa.Opis = txtOpis.Text;
         }
 
         #region Click
 
-        
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            if (txtOznaka.Text != "" && txtOpis.Text != "" && cmBoja.Text != null)
+            if (txtOznaka.Text != "" && txtOpis.Text != "")
             {
-                SerijalizacijaEtikete.deserijalizacijaEtikete();
-                Podaci.getInstance().Etikete.Add(vm.Etiketa);   //u listu etiketa dodaje etiketu
-                SerijalizacijaEtikete.serijalizacijaEtikete();
-                this.dg.ItemsSource = Podaci.getInstance().Etikete;  //!pazi
-                this.Close();
+                if (cmBoja.Text != null)
+                {
+                    SerijalizacijaEtikete.deserijalizacijaEtikete();
+                    Podaci.getInstance().Etikete.Add(vm.Etiketa);   //u listu etiketa dodaje etiketu
+                    SerijalizacijaEtikete.serijalizacijaEtikete();
+                    this.dg.ItemsSource = Podaci.getInstance().Etikete;  //!pazi
+                    this.Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Niste odabrali boju!");
+                }
             }
 
             else
-                MessageBox.Show("Niste popunili sva polja!!!");
-            
+                MessageBox.Show("Niste popunili sva polja!");   
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
@@ -77,10 +80,10 @@ namespace Projekat.Etiketa
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
-            var s = new Pomoc();
+            var s = new PomocEtiketa("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/Help/etiketa.htm");
             if (s.ShowDialog().Equals(true)) { }
-            //s.Show();
         }
+        
         #endregion
     }
 }

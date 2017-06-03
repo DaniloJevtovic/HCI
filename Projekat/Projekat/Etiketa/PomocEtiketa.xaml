@@ -1,0 +1,9 @@
+﻿<Window x:Class="Projekat.Etiketa.PomocEtiketa"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pomoć etiketa" Height="520" Width="862" WindowStartupLocation="CenterScreen"
+        Icon="/Projekat;component/Images/help.png">
+    <DockPanel>
+        <WebBrowser  Name="webEtiketa" />
+    </DockPanel>
+</Window>

@@ -26,7 +26,7 @@ namespace Projekat.Tip
             public TipP Tip { get; set; }
         }
 
-        public NoviTip1(DataGrid d) //konstruktor kada dodajes iz pregleda kako bi osvjezio pregled
+        public NoviTip1(DataGrid d)     //konstruktor iz tabelarnog prikaza za dodavanje novog tipa
         {
             InitializeComponent();
 
@@ -48,17 +48,25 @@ namespace Projekat.Tip
 
         private void btnPotvrdi_Click(object sender, RoutedEventArgs e)
         {
-            if(txtOznaka.Text  != "" && txtIme.Text != "" && txtOpis.Text !="" && Ikonica.Source != null)
+            if(txtOznaka.Text  != "" && txtIme.Text != "" && txtOpis.Text !="")
             {
-                SerijalizacijaTipa.deserijalizacijaTipa();
-                Podaci.getInstance().Tipovi.Add(vm.Tip);
-                SerijalizacijaTipa.serijalizacijaTipa();
-                this.dg.ItemsSource = Podaci.getInstance().Tipovi;  //!pazi
-                this.Close();
+                if (Ikonica.Source != null)
+                {
+                    SerijalizacijaTipa.deserijalizacijaTipa();
+                    Podaci.getInstance().Tipovi.Add(vm.Tip);
+                    SerijalizacijaTipa.serijalizacijaTipa();
+                    this.dg.ItemsSource = Podaci.getInstance().Tipovi;  //!pazi
+                    this.Close();
+                }
+
+                else
+                {
+                    MessageBox.Show("Niste unijeli ikonicu!");
+                }
             }
 
             else
-                MessageBox.Show("Niste popunili sva polja!!!");
+                MessageBox.Show("Niste popunili sva polja!");
         }
 
         private void btnOdustani_Click(object sender, RoutedEventArgs e)
@@ -75,6 +83,7 @@ namespace Projekat.Tip
             fileDialog.Filter = "Images|*.jpg;*.jpeg;*.png|" +
                                 "JPEG (*.jpg;*.jpeg)|*.jpg;*.jpeg|" +
                                 "Portable Network Graphic (*.png)|*.png";
+            
             if (fileDialog.ShowDialog() == true)
             {
                 Ikonica.Source = new BitmapImage(new Uri(fileDialog.FileName));
@@ -84,9 +93,8 @@ namespace Projekat.Tip
 
         private void btnPomoc_Click(object sender, RoutedEventArgs e)
         {
-            var s = new Pomoc();
+            var s = new PomocTip("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/Help/tip.htm");
             if (s.ShowDialog().Equals(true)) { }
-            //s.Show();
         }
     }
 }

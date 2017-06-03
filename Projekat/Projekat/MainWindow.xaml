@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         Title="Ugrožene vrste"  mc:Ignorable="d"  Height="655" Width="1132"
         Icon="/Projekat;component/Images/logo.png"
-        WindowState="Maximized"
+        WindowState="Maximized" 
         WindowStartupLocation="CenterScreen">
-    
+
     <DockPanel>
         <!--menu-->
         <Menu DockPanel.Dock="Top" Background="White">
@@ -17,83 +17,220 @@
                 </ItemsPanelTemplate>
             </Menu.ItemsPanel>
             -->
-            
+
             <MenuItem Header="_Dodaj" Background="White" >
-                <MenuItem Header="_Nova vrsta" Click="NovaVrsta_Click" Background="White"></MenuItem>
-                <MenuItem Header="_Novi tip" Click="NoviTip_Click" Background="White"></MenuItem>
-                <MenuItem Header="_Nova etiketa" Click="NovaEtiketa_Click" Background="White"></MenuItem>
+                <MenuItem Header="_Nova vrsta" Click="NovaVrsta_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/logo.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Novi tip" Click="NoviTip_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/tip.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Nova etiketa" Click="NovaEtiketa_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/tag.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
-            
+
             <MenuItem Header="_Pregled" Background="White">
-                <MenuItem Header="_Pregled vrsta" Click="PregledVrsta_Click" Background="White"></MenuItem>
-                <MenuItem Header="_Pregled tipova" Click="PregledTipova_Click" Background="White"></MenuItem>
-                <MenuItem Header="_Pregled etiketa" Click="PregledEtiketa_Click" Background="White"></MenuItem>
+                <MenuItem Header="_Pregled vrsta" Click="PregledVrsta_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/view.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Pregled tipova" Click="PregledTipova_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/view.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_Pregled etiketa" Click="PregledEtiketa_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/view.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             
+            <MenuItem Header="Mapa">
+                <MenuItem Header="Mapa 1" Click="PromjenaMape_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/world.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Mapa 2" Click="PromjenaMape1_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/world.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Mapa 3" Click="PromjenaMape2_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/world.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+
             <MenuItem Header="_Pomoć" Background="White">
-                <MenuItem Header="_Tutorijal" Click="Tutorijal_Click" Background="White"></MenuItem>
-                <MenuItem Header="_DEMO" Click="Demo_Click" Background="White"></MenuItem>
-                <MenuItem Header="_O Aplikaciji" Click="About_Click" Background="White"></MenuItem>
+                <MenuItem Header="_Online pomoć" Click="Help_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/help.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_DEMO Etiketa" Click="DemoEtiketa_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/demoEt.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_DEMO Tip" Click="DemoTip_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/demoTi.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="_O Aplikaciji" Click="About_Click" Background="White">
+                    <MenuItem.Icon>
+                        <Image Source="/Projekat;component/Images/about.png"/>
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
-        
+
         <!--toolbar-->
-        <ToolBarPanel DockPanel.Dock="Top" Background="White">
-            <ToolBar Background="White">
-                <Button Click="NovaVrsta_Click">Dodaj Vrstu</Button>
-                <Separator Width="1"></Separator>
-                <Button Click="PregledVrsta_Click">Pregled vrsta</Button>
-                <Separator Width="10" ></Separator>
-                
-                <Button Click="NoviTip_Click">Dodaj Tip</Button>
-                <Separator Width="1"></Separator>
-                <Button Click="PregledTipova_Click">Pregled tipova</Button>
-                <Separator Width="10"></Separator>
-                
-                <Button Click="NovaEtiketa_Click">Dodaj etiketu</Button>
-                <Separator Width="1"></Separator>
-                <Button Click="PregledEtiketa_Click">Pregled etiketa</Button>
-                <Separator Width="10"></Separator>
-                
-                <Button Click="Button_Click">Pomoć</Button>
-                <Separator Width="1"></Separator>
-                <Button Click="Demo_Click">DEMO</Button>
+        <ToolBarTray DockPanel.Dock="Top" Background="White" IsLocked="True" >
+            <ToolBar Background="White" BorderThickness="1" BorderBrush="Black" >
+                <!--<Separator Width="2" Background="Black"></Separator> -->
+                <Button Click="NovaVrsta_Click"  FontWeight="Bold" Margin="0,0,5,0" ToolTip="Dodajte novu vrstu">
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/logo.png" Height="15" Width="62" />
+                        <TextBlock>Dodaj vrstu</TextBlock>
+                    </StackPanel>
+                </Button>
+                <!--<Separator Width="1" Background="Black"></Separator> -->
+                <Button Click="PregledVrsta_Click" FontWeight="Bold" Margin="0,0,5,0" ToolTip="Pregled svih vrsta">
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/view.png" Height="15" Width="72"/>
+                        <TextBlock>Pregled vrsta</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Separator Width="1" Background="Black"></Separator>
+
+                <Button Click="NoviTip_Click" FontWeight="Bold" Margin="0,0,5,0" ToolTip="Dodajte novi tip">
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/tip.png" Height="15" Width="50" />
+                        <TextBlock>Dodaj tip</TextBlock>
+                    </StackPanel>
+                </Button>
+                <!--<Separator Width="" Background="Black"></Separator> -->
+                <Button Click="PregledTipova_Click" FontWeight="Bold" Margin="0,0,5,0" ToolTip="Pregled svih tipova">
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/view.png" Height="15" Width="50" />
+                        <TextBlock>Pregled tipova</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Separator Width="1" Background="Black"></Separator>
+
+                <Button Click="NovaEtiketa_Click" FontWeight="Bold" Margin="0,0,5,0" ToolTip="Dodajte novu etiketu">
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/tag.png" Height="15" Width="62" />
+                        <TextBlock>Dodaj etiketu</TextBlock>
+                    </StackPanel>
+                </Button>
+                <!--<Separator Width="1" Background="Black"></Separator> -->
+                <Button Click="PregledEtiketa_Click" FontWeight="Bold" Margin="0,0,5,0" ToolTip="Pregled svih etiketa">
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/view.png" Height="15" Width="50" />
+                        <TextBlock>Pregled etiketa</TextBlock>
+                    </StackPanel>
+                </Button>
+                <Separator Width="1" Background="Black"></Separator>
+
+                <Button Click="Help_Click" FontWeight="Bold" Margin="0,0,5,0" ToolTip="Pomoć">
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/help.png" Height="15" Width="40" />
+                        <TextBlock>Pomoć</TextBlock>
+                    </StackPanel>
+                </Button>
+                <!--<Separator Width="1" Background="Black"></Separator> -->
+                <Button Click="DemoEtiketa_Click" FontWeight="Bold" Margin="5,0,5,0" ToolTip="DEMO" >
+                    <StackPanel>
+                        <Image Source="/Projekat;component/Images/demo.png" Height="15" Width="40" />
+                        <TextBlock>DEMO</TextBlock>
+                    </StackPanel>
+                </Button>
+                <!--<Separator Width="2" Background="Black"></Separator> -->
             </ToolBar>
-        </ToolBarPanel>
+        </ToolBarTray>
+
+        <!--statusbar-->
+        <StatusBar DockPanel.Dock="Bottom" Background="White">
+            <StatusBarItem>
+                <TextBlock>Dobrodošli!</TextBlock>
+            </StatusBarItem>
+        </StatusBar>
         
-    
+        
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="200"/>
                 <ColumnDefinition Width="374*" />
             </Grid.ColumnDefinitions>
-            
-            
-            <!--lijeva strana-->
-            <Canvas Grid.Column="0" Cursor="Hand">
-                <Canvas.Background>
-                    <SolidColorBrush Color="White"></SolidColorBrush>
-                </Canvas.Background>
 
-                <ListBox Name="UgrVrLista" Width="200">
-                    <ListBox.ItemTemplate>
+
+            <!--lijeva strana-->
+            <ScrollViewer>
+                <ItemsControl x:Name="ugroVrste" Grid.Column="0" ItemsSource="{Binding Path=Vrste, UpdateSourceTrigger=PropertyChanged}">
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel Orientation="Vertical" Background="LightSlateGray"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Oznaka}" />
+                            <StackPanel Orientation="Horizontal" Background="White" Margin="1,1,1,0" Cursor="Hand" Tag="{Binding Path=Oznaka}" 
+                                        PreviewMouseLeftButtonDown="StackPanel_PreviewMouseLeftButtonDown"
+                                        MouseMove="StackPanel_MouseMove"
+                                        >
+                                <Image Source="{Binding Path=Ikonica}" Height="30" Width="30" Margin="4,4,4,4" Stretch="UniformToFill"/>
+                                <StackPanel Orientation="Vertical" Margin="0,4,2,4">
+                                    <TextBlock Text="{Binding Path=Oznaka}" FontWeight="Bold"/>
+                                    <TextBlock Text="{Binding Path=Ime}"/>
+                                </StackPanel>
+                            </StackPanel>
                         </DataTemplate>
-                    </ListBox.ItemTemplate>
-                    <!--<Label HorizontalContentAlignment="Center" Content="Ugrožene vrste" Width="190"></Label> -->
-                </ListBox>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+
+            </ScrollViewer>
+
+            <!--desna strana - KANVAS-->
+
+            <Canvas Grid.Column="1" Name="mapaVrsta" AllowDrop="True" ContextMenuService.IsEnabled="False"
+                    PreviewMouseLeftButtonDown="mapaVrsta_PreviewMouseLeftButtonDown"
+                    MouseMove="mapaVrsta_MouseMove"
+                    DragEnter="mapaVrsta_DragEnter"
+                    Drop="mapaVrsta_Drop"
+                    MouseLeftButtonDown="mapaVrsta_MouseLeftButtonDown">
+
+                <Canvas.Background>
+                    <ImageBrush x:Name="mapaSlika" ImageSource="map2.jpg"></ImageBrush>
+                </Canvas.Background>
             </Canvas>
 
 
-            <!--desna strana-->
-            <Canvas Grid.Column="1">
+
+
+
+            <!--<Canvas Grid.Column="1">
                 <Canvas.Background>
                     <ImageBrush ImageSource="map.gif" ></ImageBrush>
                 </Canvas.Background>
-            </Canvas>
-        </Grid>        
-        
+            </Canvas>-->
+        </Grid>
+
     </DockPanel>
-   
+
+
 </Window>

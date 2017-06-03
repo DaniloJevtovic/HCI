@@ -53,18 +53,30 @@
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>bin\Debug\Extended WPF Toolkit Binaries\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DEMO\NovaEtiketaDEMO.xaml.cs">
+      <DependentUpon>NovaEtiketaDEMO.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DEMO\NoviTipDEMO.xaml.cs">
+      <DependentUpon>NoviTipDEMO.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Etiketa\EtiketaA.cs" />
     <Compile Include="Etiketa\IzmjenaEtikete.xaml.cs">
       <DependentUpon>IzmjenaEtikete.xaml</DependentUpon>
     </Compile>
     <Compile Include="Etiketa\NovaEtiketa1.xaml.cs">
       <DependentUpon>NovaEtiketa1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etiketa\PomocEtiketa.xaml.cs">
+      <DependentUpon>PomocEtiketa.xaml</DependentUpon>
     </Compile>
     <Compile Include="Etiketa\PregledEtiketa.xaml.cs">
       <DependentUpon>PregledEtiketa.xaml</DependentUpon>
@@ -79,9 +91,6 @@
     <Compile Include="Help\Pomoc.xaml.cs">
       <DependentUpon>Pomoc.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Help\Tutorijal.xaml.cs">
-      <DependentUpon>Tutorijal.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Podaci.cs" />
     <Compile Include="Tip\IzmjenaTipa.xaml.cs">
       <DependentUpon>IzmjenaTipa.xaml</DependentUpon>
@@ -89,33 +98,51 @@
     <Compile Include="Tip\NoviTip1.xaml.cs">
       <DependentUpon>NoviTip1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Tip\PomocTip.xaml.cs">
+      <DependentUpon>PomocTip.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Tip\PregledTipova.xaml.cs">
       <DependentUpon>PregledTipova.xaml</DependentUpon>
     </Compile>
     <Compile Include="Tip\SerijalizacijaTipa.cs" />
     <Compile Include="Tip\TipP.cs" />
-    <Compile Include="Vrsta\IzmjenaVrste.xaml.cs">
-      <DependentUpon>IzmjenaVrste.xaml</DependentUpon>
+    <Compile Include="Etiketa\Validacija.cs" />
+    <Compile Include="Tip\ValidacijaTip.cs" />
+    <Compile Include="Vrsta\IzmjenaVrste1.xaml.cs">
+      <DependentUpon>IzmjenaVrste1.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vrsta\NovaVrsta1.xaml.cs">
       <DependentUpon>NovaVrsta1.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vrsta\OdabirEtikete.xaml.cs">
-      <DependentUpon>OdabirEtikete.xaml</DependentUpon>
+    <Compile Include="Vrsta\NovaVrsta2.xaml.cs">
+      <DependentUpon>NovaVrsta2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Vrsta\OdabirTipa.xaml.cs">
-      <DependentUpon>OdabirTipa.xaml</DependentUpon>
+    <Compile Include="Vrsta\PomocVrsta.xaml.cs">
+      <DependentUpon>PomocVrsta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vrsta\PregledVrsta.xaml.cs">
       <DependentUpon>PregledVrsta.xaml</DependentUpon>
     </Compile>
     <Compile Include="Vrsta\SerijalizacijaVrste.cs" />
+    <Compile Include="Vrsta\ValidacijaVrsta.cs" />
     <Compile Include="Vrsta\VrstaA.cs" />
+    <Page Include="DEMO\NovaEtiketaDEMO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DEMO\NoviTipDEMO.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Etiketa\IzmjenaEtikete.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Etiketa\NovaEtiketa1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Etiketa\PomocEtiketa.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -132,10 +159,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Help\Pomoc.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Help\Tutorijal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,11 +182,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Tip\PomocTip.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Tip\PregledTipova.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vrsta\IzmjenaVrste.xaml">
+    <Page Include="Vrsta\IzmjenaVrste1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -171,11 +198,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vrsta\OdabirEtikete.xaml">
+    <Page Include="Vrsta\NovaVrsta2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vrsta\OdabirTipa.xaml">
+    <Page Include="Vrsta\PomocVrsta.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -211,9 +238,96 @@
   <ItemGroup>
     <Resource Include="map.gif" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="map1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="map2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\view.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\tag.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\add2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\demo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\about.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Help\app.htm" />
+    <Content Include="Help\etiketa.htm" />
+    <Resource Include="Help\Images\mapa1.png" />
+    <Resource Include="Help\Images\novaEtiketa.png" />
+    <Resource Include="Help\Images\novaVrsta.png" />
+    <Resource Include="Help\Images\noviTip.png" />
+    <Resource Include="Help\Images\pregledTip.png" />
+    <Resource Include="Help\Images\pregledVrsta.png" />
+    <Resource Include="Help\Images\prikEtiketa.png" />
+    <Resource Include="Help\Images\prikEtiketa2.png.png" />
+    <Resource Include="Help\Images\toolbar.png" />
+    <Resource Include="Help\Images\valEtiketaOzn.png" />
+    <Resource Include="Help\Images\valTipOzn.png" />
+    <Resource Include="Help\Images\mapaMini.png" />
+    <Resource Include="Help\Images\datumOtkr.png" />
+    <Resource Include="Help\Images\etiketeVrste.png" />
+    <Resource Include="Help\Images\godPrihod.png" />
+    <Resource Include="Help\Images\ikonicaVrste.png" />
+    <Resource Include="Help\Images\imeVrste.png" />
+    <Resource Include="Help\Images\map2.jpg" />
+    <Resource Include="Help\Images\opisVrste.png" />
+    <Resource Include="Help\Images\oznVrste.png" />
+    <Resource Include="Help\Images\statusUgr.png" />
+    <Resource Include="Help\Images\tipVrste.png" />
+    <Resource Include="Help\Images\turStatusVrste.png" />
+    <Resource Include="Help\Images\ikonicaTip.png" />
+    <Resource Include="Help\Images\imeTip.png" />
+    <Resource Include="Help\Images\opisTip.png" />
+    <Resource Include="Help\Images\tipOznaka.png" />
+    <Resource Include="Help\Images\bojaEtiketa.png" />
+    <Resource Include="Help\Images\opisEtikete.png" />
+    <Resource Include="Help\Images\menuToolbar.png" />
+    <Resource Include="Help\Images\listaVrste.png" />
+    <Resource Include="Help\Images\canvas.png" />
+    <Content Include="Help\index.htm" />
+    <Content Include="Help\pregledEtiketa.htm" />
+    <Content Include="Help\pregledTipova.htm" />
+    <Content Include="Help\pregledVrsta.htm" />
+    <Content Include="Help\tip.htm" />
+    <Content Include="Help\vrsta.htm" />
+    <Resource Include="map3.png" />
+    <Resource Include="Images\world.png" />
+    <Resource Include="Images\demoTi.png" />
+    <Resource Include="Images\demoEt.png" />
+    <Resource Include="Images\home.png" />
+    <Resource Include="Images\forward.png" />
+    <Resource Include="Images\backward.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

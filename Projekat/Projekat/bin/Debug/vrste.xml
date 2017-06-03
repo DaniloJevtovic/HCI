@@ -1,93 +1,20 @@
 <?xml version="1.0"?>
 <ArrayOfVrstaA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <VrstaA>
-    <Oznaka>ASL</Oznaka>
-    <Ime>africki slon</Ime>
-    <Opis>najveci kopneni sisavac</Opis>
-    <Tip>sisar</Tip>
-    <Etiketa>SL</Etiketa>
-    <StUgr>Ugrožena</StUgr>
-    <Ikonica>C:\Users\Lemur\Desktop\Afrički-slon.jpg</Ikonica>
-    <OpZaLjude>true</OpZaLjude>
+    <Oznaka>fsdf</Oznaka>
+    <Ime>fsd</Ime>
+    <Opis>fs</Opis>
+    <Tip>TIP2</Tip>
+    <Etikete />
+    <StUgr>Kritično ugrožena</StUgr>
+    <Ikonica>C:\Users\Lemur\Pictures\screen-23.27.19[25.05.2017].png</Ikonica>
+    <OpZaLjude>false</OpZaLjude>
     <NaIucn>false</NaIucn>
-    <ZiviUNasMjes>true</ZiviUNasMjes>
-    <TurStatus>Djelimično habituirana</TurStatus>
-    <GodPrihod>1400.86</GodPrihod>
-    <DatOtkr>1973-05-20T00:00:00</DatOtkr>
-  </VrstaA>
-  <VrstaA>
-    <Oznaka>TI</Oznaka>
-    <Ime>tigar</Ime>
-    <Opis>tigar je najveca macka na svijetu</Opis>
-    <Tip>macka</Tip>
-    <Etiketa>TI</Etiketa>
-    <StUgr>Ugrožena</StUgr>
-    <Ikonica>C:\Users\Lemur\Desktop\tigar.jpg</Ikonica>
-    <OpZaLjude>true</OpZaLjude>
-    <NaIucn>true</NaIucn>
     <ZiviUNasMjes>false</ZiviUNasMjes>
     <TurStatus>Izolovana</TurStatus>
-    <GodPrihod>250.542</GodPrihod>
-    <DatOtkr>1984-06-10T00:00:00</DatOtkr>
-  </VrstaA>
-  <VrstaA>
-    <Oznaka>KO</Oznaka>
-    <Ime>Divlji konj</Ime>
-    <Opis>divlji konj</Opis>
-    <Tip>konj</Tip>
-    <Etiketa>KO</Etiketa>
-    <StUgr>Ranjiva</StUgr>
-    <Ikonica>C:\Users\Lemur\Desktop\324278_konji-foto-namibian-com_kf.jpg</Ikonica>
-    <OpZaLjude>false</OpZaLjude>
-    <NaIucn>true</NaIucn>
-    <ZiviUNasMjes>false</ZiviUNasMjes>
-    <TurStatus>Habituirana</TurStatus>
-    <GodPrihod>5443</GodPrihod>
-    <DatOtkr>2001-01-01T00:00:00</DatOtkr>
-  </VrstaA>
-  <VrstaA>
-    <Oznaka>PK</Oznaka>
-    <Ime>plavi kit</Ime>
-    <Opis>pl</Opis>
-    <Tip>sisar</Tip>
-    <Etiketa>SI</Etiketa>
-    <StUgr>Zavisna od očuvanja staništa</StUgr>
-    <Ikonica>C:\Users\Lemur\Desktop\361121479.jpg</Ikonica>
-    <OpZaLjude>true</OpZaLjude>
-    <NaIucn>false</NaIucn>
-    <ZiviUNasMjes>false</ZiviUNasMjes>
-    <TurStatus>Habituirana</TurStatus>
-    <GodPrihod>4340</GodPrihod>
-    <DatOtkr>1944-07-18T00:00:00</DatOtkr>
-  </VrstaA>
-  <VrstaA>
-    <Oznaka>sa</Oznaka>
-    <Ime>sa</Ime>
-    <Opis>sa</Opis>
-    <Tip>konj</Tip>
-    <Etiketa>SI</Etiketa>
-    <StUgr>Kritično ugrožena</StUgr>
-    <Ikonica>C:\Users\Lemur\Desktop\361121479.jpg</Ikonica>
-    <OpZaLjude>false</OpZaLjude>
-    <NaIucn>false</NaIucn>
-    <ZiviUNasMjes>false</ZiviUNasMjes>
-    <TurStatus>Djelimično habituirana</TurStatus>
-    <GodPrihod>20</GodPrihod>
+    <GodPrihod>0</GodPrihod>
     <DatOtkr>0001-01-01T00:00:00</DatOtkr>
-  </VrstaA>
-  <VrstaA>
-    <Oznaka>das</Oznaka>
-    <Ime>da</Ime>
-    <Opis>dad</Opis>
-    <Tip>Ptica</Tip>
-    <Etiketa>SI</Etiketa>
-    <StUgr>Zavisna od očuvanja staništa</StUgr>
-    <Ikonica>C:\Users\Lemur\Desktop\Afrički-slon.jpg</Ikonica>
-    <OpZaLjude>false</OpZaLjude>
-    <NaIucn>false</NaIucn>
-    <ZiviUNasMjes>false</ZiviUNasMjes>
-    <TurStatus>Djelimično habituirana</TurStatus>
-    <GodPrihod>26</GodPrihod>
-    <DatOtkr>2001-01-01T00:00:00</DatOtkr>
+    <X>0</X>
+    <Y>0</Y>
   </VrstaA>
 </ArrayOfVrstaA>

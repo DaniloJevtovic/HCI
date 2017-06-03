@@ -14,7 +14,10 @@ namespace Projekat.Etiketa
         private string _boja;
         private string _opis;
         
-        public EtiketaA() { }
+        public EtiketaA() 
+        {
+ 
+        }
 
         public string Oznaka 
         {

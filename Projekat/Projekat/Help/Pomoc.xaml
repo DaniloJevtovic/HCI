@@ -1,9 +1,27 @@
 ﻿<Window x:Class="Projekat.Help.Pomoc"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Icon="/Projekat;component/Images/logo.png"
-        Title="Pomoć" Height="300" Width="300" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Icon="/Projekat;component/Images/help.png"
+        Title="Pomoć" Height="622" Width="865" WindowStartupLocation="CenterScreen">
+    <Window.CommandBindings>
+        <CommandBinding Command="NavigationCommands.BrowseBack" CanExecute="BrowseBack_CanExecute" Executed="BrowseBack_Executed" />
+        <CommandBinding Command="NavigationCommands.BrowseForward" CanExecute="BrowseForward_CanExecute" Executed="BrowseForward_Executed" />
+    </Window.CommandBindings>
+
+
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top" IsLocked="True">
+            <ToolBar>
+                <Button  Command="NavigationCommands.BrowseBack">
+                    <Image Source="/Projekat;component/Images/backward.png" Width="20" Height="20" />
+                </Button>
+                <Button Command="NavigationCommands.BrowseForward">
+                    <Image Source="/Projekat;component/Images/forward.png" Width="20" Height="20" />
+                </Button>
+            </ToolBar>
+           
+        </ToolBarTray>
         
-    </Grid>
+        <WebBrowser  Name="web" />
+    </DockPanel>
 </Window>
