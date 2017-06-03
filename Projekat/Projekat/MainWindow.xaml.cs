@@ -21,6 +21,7 @@ using Projekat.DEMO;
 using System.Xml.Linq;
 using System.Timers;
 
+
 namespace Projekat
 {
     public partial class MainWindow : Window
@@ -126,26 +127,8 @@ namespace Projekat
 
         private void NovaVrsta_Click(object sender, RoutedEventArgs e)
         {
-            //int poc = Podaci.getInstance().Vrste.Count;
-            //ucitaj();
-
             var s = new NovaVrsta1(vm.Vrste);
             if (s.ShowDialog().Equals(true)) { }
-
-            //ucitaj();
-
-            //ugroVrste.Items.Refresh();
-
-            //int kraj = Podaci.getInstance().Vrste.Count;
-
-            //if (poc != kraj)
-            //{
-                //vm.Vrste.Add((VrstaA)Podaci.getInstance().Vrste.Last());    //u vrste koje nisu ubacene na kanvas dodajem novododatu vrst   
-            //}                                                               //prikaz sa lijeve strane
-            
-            //SerijalizacijaVrste.deserijalizacijaVrste();
-            //ugroVrste.ItemsSource = vm.Vrste;
-            //ugroVrste.Items.Refresh();
         }
 
         private void NoviTip_Click(object sender, RoutedEventArgs e)
@@ -202,30 +185,12 @@ namespace Projekat
             if (s.ShowDialog().Equals(true)) { }
         }
 
-        #region PromjenaMape
-
-        private void PromjenaMape_Click(object sender, RoutedEventArgs e)
-        {
-            mapaSlika.ImageSource = new BitmapImage(new Uri("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/map1.png"));
-        }
-
-        private void PromjenaMape1_Click(object sender, RoutedEventArgs e)
-        {
-            mapaSlika.ImageSource = new BitmapImage(new Uri("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/map2.jpg"));
-        }
-
-        private void PromjenaMape2_Click(object sender, RoutedEventArgs e)
-        {
-            mapaSlika.ImageSource = new BitmapImage(new Uri("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/map3.png"));
-        }
-
-        #endregion PromjenaMape
-
         #endregion Click
 
 
         #region DR&DOP CANVAS
 
+        #region toBe
         private void mapaVrsta_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)  
         {
 
@@ -240,6 +205,8 @@ namespace Projekat
         {
 
         }
+
+        #endregion toBe
 
         private void mapaVrsta_Drop(object sender, DragEventArgs e)
         {
@@ -377,7 +344,24 @@ namespace Projekat
 
         #endregion DR&DOP LIJEVA STRANA
 
+        #region PromjenaMape
 
+        private void PromjenaMape_Click(object sender, RoutedEventArgs e)
+        {
+            mapaSlika.ImageSource = new BitmapImage(new Uri("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/map1.png"));
+        }
+
+        private void PromjenaMape1_Click(object sender, RoutedEventArgs e)
+        {
+            mapaSlika.ImageSource = new BitmapImage(new Uri("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/map2.jpg"));
+        }
+
+        private void PromjenaMape2_Click(object sender, RoutedEventArgs e)
+        {
+            mapaSlika.ImageSource = new BitmapImage(new Uri("C:/Users/Lemur/GIT/HCI/Projekat/Projekat/map3.png"));
+        }
+
+        #endregion PromjenaMape
 
     }
 }

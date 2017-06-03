@@ -280,6 +280,7 @@
   <ItemGroup>
     <Content Include="Help\app.htm" />
     <Content Include="Help\etiketa.htm" />
+    <Resource Include="worldMap.gif" />
     <Resource Include="Help\Images\mapa1.png" />
     <Resource Include="Help\Images\novaEtiketa.png" />
     <Resource Include="Help\Images\novaVrsta.png" />

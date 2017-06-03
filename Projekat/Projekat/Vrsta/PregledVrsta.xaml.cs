@@ -13,6 +13,7 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Data;
 using System.Collections.ObjectModel;
+using System.Windows.Threading;
 
 namespace Projekat.Vrsta
 {
@@ -23,7 +24,6 @@ namespace Projekat.Vrsta
         private ViewModel vm;
         ObservableCollection<VrstaA> vrste;
         ObservableCollection<VrstaA> vrsteNaCanvasu;
-
 
         Canvas can;
 
@@ -116,11 +116,14 @@ namespace Projekat.Vrsta
 
                 var s = new IzmjenaVrste1(vrsta , ind);
                 if (s.ShowDialog().Equals(true)) { }
+
+
+            
                 VrsteTabela.Items.Refresh();
 
                 SerijalizacijaVrste.deserijalizacijaVrste();
                 VrsteTabela.ItemsSource = Podaci.getInstance().Vrste;
-            }
+            } 
             else
             {
                 MessageBox.Show("Niste selektovali vrstu");
@@ -166,16 +169,15 @@ namespace Projekat.Vrsta
             if (s.ShowDialog().Equals(true)) { }
         }
         #endregion Click
-
         
         private void txtOznaka_LostFocus(object sender, RoutedEventArgs e)
         {
-            txtOznaka.Text = "";
+            //txtOznaka.Text = null;
         }
 
         private void txtIme_LostFocus(object sender, RoutedEventArgs e)
         {
-            txtIme.Text = "";
+            //txtIme.Text = null;
         }
     }
 }

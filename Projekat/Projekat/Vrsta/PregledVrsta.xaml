@@ -32,21 +32,21 @@
             <!--filtriranje-->
             <Grid Grid.Column="1">
                 <Label Content="Pretraga po imenu:"></Label>
-                <xctk:WatermarkTextBox x:Name="txtIme" TextChanged="txtIme_TextChanged" Margin="119,3,6,3" Watermark="Unesite ime vrste" LostFocus="txtIme_LostFocus"  />
+                <xctk:WatermarkTextBox x:Name="txtIme" TextChanged="txtIme_TextChanged" Margin="119,3,6,3" Watermark="Unesite ime vrste" LostFocus="txtIme_LostFocus"/>
             </Grid>
 
             <!--dugmici-->
             <Grid Grid.Column="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition />
+                    <!--<ColumnDefinition />-->
                     <ColumnDefinition />
                     <ColumnDefinition />
                     <ColumnDefinition />
                 </Grid.ColumnDefinitions>
-                <Button Content="Dodaj" Grid.Column="0" Click="btnDodaj_Click" Margin="3,3,3,3" ></Button>
-                <Button Content="Izmjeni" Grid.Column="1" Click="btnIzmjeni_Click" Margin="3,3,3,3" ></Button>
-                <Button Content="Obriši" Grid.Column="2" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
-                <Button Content="Pomoć" Grid.Column="3" Click="btnPomoc_Click" Margin="3,3,3,3"></Button>
+                <!--<Button Content="Dodaj" Grid.Column="0" Click="btnDodaj_Click" Margin="3,3,3,3" ></Button>-->
+                <Button Content="Izmjeni" Grid.Column="0" Click="btnIzmjeni_Click" Margin="3,3,3,3" ></Button>
+                <Button Content="Obriši" Grid.Column="1" Click="btnObrisi_Click" Margin="3,3,3,3"></Button>
+                <Button Content="Pomoć" Grid.Column="2" Click="btnPomoc_Click" Margin="3,3,3,3"></Button>
             </Grid>
 
         </Grid>

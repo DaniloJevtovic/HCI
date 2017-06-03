@@ -175,8 +175,7 @@ namespace Projekat.Vrsta
                     MessageBox.Show("Podaci uspješno sačuvani.");
                     //vrste.Add(vm.Vrsta);
 
-                    //SerijalizacijaVrste.deserijalizacijaVrste();
-                    this.dg.ItemsSource = vrste;
+                    //this.dg.ItemsSource = vrste;  //OVDJE AKO HOCES DA TI OSVJEZAVA TABELU
 
                     this.Close();
                 }

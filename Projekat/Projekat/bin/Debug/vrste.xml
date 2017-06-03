@@ -1,20 +1,4 @@
 <?xml version="1.0"?>
 <ArrayOfVrstaA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <VrstaA>
-    <Oznaka>fsdf</Oznaka>
-    <Ime>fsd</Ime>
-    <Opis>fs</Opis>
-    <Tip>TIP2</Tip>
-    <Etikete />
-    <StUgr>Kritično ugrožena</StUgr>
-    <Ikonica>C:\Users\Lemur\Pictures\screen-23.27.19[25.05.2017].png</Ikonica>
-    <OpZaLjude>false</OpZaLjude>
-    <NaIucn>false</NaIucn>
-    <ZiviUNasMjes>false</ZiviUNasMjes>
-    <TurStatus>Izolovana</TurStatus>
-    <GodPrihod>0</GodPrihod>
-    <DatOtkr>0001-01-01T00:00:00</DatOtkr>
-    <X>0</X>
-    <Y>0</Y>
-  </VrstaA>
+  
 </ArrayOfVrstaA>

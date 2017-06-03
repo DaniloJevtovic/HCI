@@ -22,7 +22,7 @@
 
 
         <WrapPanel  Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="20,3,27,20">
-            <Label Content="'Esc - za izlaz"/>
+            <Label Content="'Esc' - za izlaz"/>
             <Button Content="Pomoć" Margin="3,3,0,3" MaxWidth="90" MinWidth="90" Padding="2,2,2,2" Click="btnPomoc_Click"  />
         </WrapPanel>
 

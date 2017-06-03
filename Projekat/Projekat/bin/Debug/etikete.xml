@@ -1,23 +1,4 @@
 <?xml version="1.0"?>
 <ArrayOfEtiketaA xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <EtiketaA>
-    <Oznaka>ET1</Oznaka>
-    <Boja>plava</Boja>
-    <Opis>Ovo je neki opis etikete 1</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>eti2</Oznaka>
-    <Boja>crna</Boja>
-    <Opis>Ovo je opis etikete 2</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>ET4</Oznaka>
-    <Boja>plava</Boja>
-    <Opis>neki opis</Opis>
-  </EtiketaA>
-  <EtiketaA>
-    <Oznaka>E123</Oznaka>
-    <Boja>žuta</Boja>
-    <Opis>Opis etikete </Opis>
-  </EtiketaA>
+
 </ArrayOfEtiketaA>

@@ -111,7 +111,7 @@ namespace Projekat.Tip
             if (fileDialog.ShowDialog() == true)
             {
                 Ikonica.Source = new BitmapImage(new Uri(fileDialog.FileName));
-                //vm.Tip.Ikonica = fileDialog.FileName;
+                vm.Tip.Ikonica = fileDialog.FileName;
                 //ti.Ikonica = fileDialog.FileName;
             }
         }

@@ -1,15 +1,4 @@
 <?xml version="1.0"?>
 <ArrayOfTipP xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <TipP>
-    <Oznaka>tip1</Oznaka>
-    <Ime>Ime tipa</Ime>
-    <Ikonica>C:\Users\Lemur\Pictures\konj.jpg</Ikonica>
-    <Opis>Ovo je neki opis tipa</Opis>
-  </TipP>
-  <TipP>
-    <Oznaka>TIP2</Oznaka>
-    <Ime>Ime tipa2</Ime>
-    <Ikonica>C:\Users\Lemur\Pictures\Lemur.jpg</Ikonica>
-    <Opis>opis tipa</Opis>
-  </TipP>
+  
 </ArrayOfTipP>

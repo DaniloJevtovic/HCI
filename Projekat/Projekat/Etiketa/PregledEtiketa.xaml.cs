@@ -124,12 +124,12 @@ namespace Projekat.Etiketa
 
         private void txtOznaka_LostFocus(object sender, RoutedEventArgs e)
         {
-            txtOznaka.Text = "";    //kad izgubi fokus brise se tekst
+            //txtOznaka.Text = "";    //kad izgubi fokus brise se tekst
         }
 
         private void txtBoja_LostFocus(object sender, RoutedEventArgs e)
         {
-            txtBoja.Text = "";      //kad izbrise fokus brise tekst
+            //txtBoja.Text = "";      //kad izbrise fokus brise tekst
         }
  
     }

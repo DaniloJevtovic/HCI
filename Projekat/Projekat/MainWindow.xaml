@@ -182,7 +182,7 @@
                 <ItemsControl x:Name="ugroVrste" Grid.Column="0" ItemsSource="{Binding Path=Vrste, UpdateSourceTrigger=PropertyChanged}">
                     <ItemsControl.ItemsPanel>
                         <ItemsPanelTemplate>
-                            <StackPanel Orientation="Vertical" Background="LightSlateGray"/>
+                            <StackPanel Orientation="Vertical" Background="Silver"/>
                         </ItemsPanelTemplate>
                     </ItemsControl.ItemsPanel>
 
